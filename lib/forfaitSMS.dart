@@ -61,37 +61,37 @@ class _ForfaitSMSState extends State<ForfaitSMS> {
 
   ];
   var camtel = [{
-    'photo':'assets/camtel_logo.jpg',
+    'photo':'assets/camtel.png',
     'forfait':'TOLI XS',
     'quantite':'    500F 500Mo+50min\n+50SMS 30jrs',
     'code':'*825*2*1*1*1#'
   },
     {
-      'photo':'assets/camtel_logo.jpg',
+      'photo':'assets/camtel.png',
       'forfait':'TOLI S',
       'quantite':'    2.000F 2Go+200min\n+200SMS 30jrs',
       'code':'*825*2*1*2*1#'
     },
     {
-      'photo':'assets/camtel_logo.jpg',
+      'photo':'assets/camtel.png',
       'forfait':'TOLI M',
       'quantite':'    5.000F 5Go+500min\n+500SMS 30jrs',
       'code':'*825*2*1*3*1#'
     },
     {
-      'photo':'assets/camtel_logo.jpg',
+      'photo':'assets/camtel.png',
       'forfait':'TOLI XS',
       'quantite':'    10.000F 10Go+1000min\n+1000SMS 30jrs',
       'code':'*825*2*1*4*1#'
     },
     {
-      'photo':'assets/camtel_logo.jpg',
+      'photo':'assets/camtel.png',
       'forfait':'TOLI XS',
       'quantite':'    20.000F 20Go+2000min\n+2000SMS 30jrs',
       'code':'*825*2*1*5*1#'
     },
     {
-      'photo':'assets/camtel_logo.jpg',
+      'photo':'assets/camtel.png',
       'forfait':'TOLI XS',
       'quantite':'    35.000F 35Go+3500min\n+3500SMS 30jrs',
       'code':'*825*2*1*6*1#'
@@ -148,7 +148,11 @@ class _ForfaitSMSState extends State<ForfaitSMS> {
                     itemCount: imagesReseaux.length,
                     itemBuilder: (context,index){
                       return Container(
-                        color: Colors.grey.withOpacity(.3),
+                        decoration: BoxDecoration(
+                            color: Colors.grey.withOpacity(.3),
+                            borderRadius: BorderRadius.circular(90)
+                        ),
+                        margin: EdgeInsets.all(2),
                         child: GestureDetector(
                           onTap: (){
                             setState(() {
@@ -160,10 +164,11 @@ class _ForfaitSMSState extends State<ForfaitSMS> {
                           },
                           child: Container(
                             margin: EdgeInsets.all(7),
-                            height: 60,
+                            height: 50,
                             width: 60,
                             decoration: BoxDecoration(
                               color: Colors.red,
+                                borderRadius: BorderRadius.circular(90),
                                 image: DecorationImage(
                                     image: AssetImage(imagesReseaux[index],),fit: BoxFit.cover
                                 )

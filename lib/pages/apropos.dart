@@ -8,13 +8,13 @@ class Apropos extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String apropos = "    Cette application a ete concue pour faciliter "
+    String apropos = "    Cette application a été concue pour faciliter "
         "l\'activation des forfaits et des transactions via les"
-        " differents fournisseurs d'acces au cameroun, a savoir :"
+        " différents fournisseurs d'accès au cameroun, à savoir :"
         " Orange, MTN, Camtel ,Nexttel .\n\n La version actuelle "
-        "se vera changee au fil du temps . Car les forfaits devront etre "
-        "mises a jour . \n\n\nN'hesitez pas a nous contacter en cas"
-        " de probleme lors de l'utilisation du logitiel. \n\n\n "
+        "se vera changée au fil du temps . Car les forfaits devront être "
+        "mises à jour . \n\n\nN'hésitez pas à nous contacter en cas"
+        " de besoin des services et aussi lors de l'utilisation du logitiel. \n\n\n "
         "Merci et bonne utilisation ...." ;
     return Scaffold(
       appBar: AppBar(
@@ -41,13 +41,13 @@ class Apropos extends StatelessWidget {
                         color: Colors.grey,
                         borderRadius: BorderRadius.circular(100),
                           image: DecorationImage(
-                              image: AssetImage('assets/home.png'),
+                              image: AssetImage('assets/servus.jpg'),
                               fit: BoxFit.cover
                           )
                       ),
                        ),
                     SizedBox(height: 8,),
-                    Text('Caller App',style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold,color: Colors.white),)
+                    Text('Servus',style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold,color: Colors.white),)
                   ],
                 ),
             ),
@@ -58,15 +58,27 @@ class Apropos extends StatelessWidget {
               child: Text(apropos),
             ),
             SizedBox(height: 9,),
-            Text('Developpeur : Sangon Brangon',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+            Text('Développeur : Sangon Brangon',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
             SizedBox(height: 9,),
             Text('brandonsangon5@gmail.com',style: TextStyle(fontSize: 15)),
             SizedBox(height: 10,),
-            
+            Divider(),
+            Container(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text('Pour vos besoins de :',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+                  Text('* création d\'applications '),
+                  Text('* création de sites web  '),
+                  Text('* création des logos et flyers')
+                ],
+              ),
+            ),
+            SizedBox(height: 20,),
             GestureDetector(
               onTap: ()async{
                 var message = "Salut Mr Brandon, concepteur de "
-                    "l\'application Caller App, je desire ...";
+                    "l\'application Servus, je desire entrer en possession de votre produit...";
                 var number = '+237657591936';
                 var url = "whatsapp://send?phone=$number&text=$message";
                 await canLaunch(url)?launch(url):print('erreur de lien');
@@ -75,7 +87,7 @@ class Apropos extends StatelessWidget {
                 width: 200,
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color: Colors.lightBlueAccent,
+                  color: Colors.blue,
                   border: Border.all(color: Colors.grey,width: 0.5),
                   borderRadius: BorderRadius.circular(10)
                 ),

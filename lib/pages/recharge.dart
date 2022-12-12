@@ -101,7 +101,9 @@ class _RechargePageState extends State<RechargePage> {
         height: 200,
         child: Column(
           children: [
-            SizedBox(height: 15,),
+            SizedBox(height: 10,),
+            SizedBox(height: 5,),
+            Text('Rechargez avec  ',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
             GestureDetector(
               onTap: ()async{
                 print(type);
@@ -123,8 +125,8 @@ class _RechargePageState extends State<RechargePage> {
                   children: [
                     SizedBox(width: 9,),
                     Container(
-                      height: 60,
-                      width: 60,
+                      height: 45,
+                      width: 45,
                       decoration: BoxDecoration(
                           color: Colors.yellow,
                           borderRadius: BorderRadius.circular(150),
@@ -136,7 +138,7 @@ class _RechargePageState extends State<RechargePage> {
                     ),
                     SizedBox(width: 25,),
                     Text('Orange money',style: TextStyle(
-                        fontSize: 17,fontWeight: FontWeight.bold
+                        fontSize: 16,fontWeight: FontWeight.bold
                     ),)
                   ],
                 ),
@@ -163,8 +165,8 @@ class _RechargePageState extends State<RechargePage> {
                   children: [
                     SizedBox(width: 9,),
                     Container(
-                      height: 60,
-                      width: 60,
+                      height: 45,
+                      width: 45,
                       decoration: BoxDecoration(
                           color: Colors.yellow,
                           borderRadius: BorderRadius.circular(150),
@@ -176,7 +178,7 @@ class _RechargePageState extends State<RechargePage> {
                     ),
                     SizedBox(width: 25,),
                     Text('MTN MoMo',style: TextStyle(
-                        fontSize: 7,fontWeight: FontWeight.bold
+                        fontSize: 16,fontWeight: FontWeight.bold
                     ),)
                   ],
                 ),

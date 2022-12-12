@@ -55,12 +55,12 @@ class _SoldConsultState extends State<SoldConsult> {
                              child: Image.asset('assets/logo-orange.jpg',fit: BoxFit.cover,)
                          ),
                          SizedBox(width: 15,),
-                         Text('Orange',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17),)
+                         Text('Orange',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17,color:Colors.black),)
                        ],
                      ),
                       Container(
                           margin: EdgeInsets.only(right: 10),
-                          child: Icon(Icons.call))
+                          child: Icon(Icons.call,color:Colors.black))
                     ],
                   ),
                 ),
@@ -97,12 +97,12 @@ class _SoldConsultState extends State<SoldConsult> {
                               child: Image.asset('assets/MTN-Logo.png',fit: BoxFit.cover,)
                           ),
                           SizedBox(width: 15,),
-                          Text('MTN',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17),)
+                          Text('MTN',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17,color:Colors.black),)
                         ],
                       ),
                       Container(
                           margin: EdgeInsets.only(right: 10),
-                          child: Icon(Icons.call))
+                          child: Icon(Icons.call,color:Colors.black))
                     ],
                   ),
                 ),
@@ -110,7 +110,7 @@ class _SoldConsultState extends State<SoldConsult> {
               SizedBox(height: 20,),
               GestureDetector(
                 onTap: ()async{
-                  await FlutterPhoneDirectCaller.callNumber('*825#');
+                  await FlutterPhoneDirectCaller.callNumber('*825*1*2*1#');
                 },
                 child: Container(
                   width: 230,
@@ -139,12 +139,12 @@ class _SoldConsultState extends State<SoldConsult> {
                               child: Image.asset('assets/camtel_logo.jpg',fit: BoxFit.cover,)
                           ),
                           SizedBox(width: 15,),
-                          Text('Camtel',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17),)
+                          Text('Camtel',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17,color:Colors.black),)
                         ],
                       ),
                       Container(
                           margin: EdgeInsets.only(right: 10),
-                          child: Icon(Icons.call))
+                          child: Icon(Icons.call,color:Colors.black))
                     ],
                   ),
                 ),
@@ -181,12 +181,12 @@ class _SoldConsultState extends State<SoldConsult> {
                               child: Image.asset('assets/Nexttel-Cameroon-Logo.png',fit: BoxFit.cover,)
                           ),
                           SizedBox(width: 15,),
-                          Text('Nexttel',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17),)
+                          Text('Nexttel',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17,color:Colors.black),)
                         ],
                       ),
                       Container(
                           margin: EdgeInsets.only(right: 10),
-                          child: Icon(Icons.call))
+                          child: Icon(Icons.call,color:Colors.black))
                     ],
                   ),
                 ),
@@ -206,6 +206,7 @@ class _SoldConsultState extends State<SoldConsult> {
         child:Column(
           children: [
             SizedBox(height: 10,),
+            Text('Choix du compte ',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
             GestureDetector(
               onTap: ()async{
 
@@ -228,8 +229,8 @@ class _SoldConsultState extends State<SoldConsult> {
                       children: [
                         SizedBox(width: 9,),
                         Container(
-                          height: 60,
-                          width: 60,
+                          height: 45,
+                          width: 45,
                           decoration: BoxDecoration(
                               color: Colors.yellow,
                               borderRadius: BorderRadius.circular(150),
@@ -241,7 +242,7 @@ class _SoldConsultState extends State<SoldConsult> {
                         ),
                         SizedBox(width: 25,),
                         Text('Orange money',style: TextStyle(
-                            fontSize: 19,fontWeight: FontWeight.bold
+                            fontSize: 16,fontWeight: FontWeight.bold
                         ),)
                       ],
                     ),
@@ -275,13 +276,20 @@ class _SoldConsultState extends State<SoldConsult> {
                      children: [
                        SizedBox(width: 9,),
                        Container(
-                         height: 60,
-                         width: 70,
-                         child: Image.asset('assets/logo-orange.jpg'),
+                         height: 45,
+                         width: 45,
+                       decoration: BoxDecoration(
+                         color: Colors.transparent,
+                         borderRadius: BorderRadius.circular(90),
+                         image: DecorationImage(
+                           image: AssetImage('assets/logo-orange.jpg'),
+                           fit: BoxFit.cover
+                         )
+                       ),
                        ),
                        SizedBox(width: 25,),
                        Text('Credit principal',style: TextStyle(
-                           fontSize: 19,fontWeight: FontWeight.bold
+                           fontSize: 16,fontWeight: FontWeight.bold
                        ),)
                      ],
                    ),
@@ -328,8 +336,8 @@ class _SoldConsultState extends State<SoldConsult> {
                        children: [
                          SizedBox(width: 9,),
                          Container(
-                           height: 60,
-                           width: 60,
+                           height: 45,
+                           width: 45,
                            decoration: BoxDecoration(
                                color: Colors.yellow,
                                borderRadius: BorderRadius.circular(150),
@@ -363,6 +371,7 @@ class _SoldConsultState extends State<SoldConsult> {
                 },
                 child: Container(
                   margin: EdgeInsets.all(10),
+                  padding: EdgeInsets.all(5),
                   decoration: BoxDecoration(
                       color: Colors.transparent,
                       border: Border.all(color:Colors.grey)
@@ -374,13 +383,21 @@ class _SoldConsultState extends State<SoldConsult> {
                         children: [
                           SizedBox(width: 9,),
                           Container(
-                            height: 60,
-                            width: 70,
-                            child: Image.asset('assets/MTN-Logo.png'),
+                            height: 45,
+                            width: 45,
+                           decoration: BoxDecoration(
+
+                               borderRadius: BorderRadius.circular(90),
+                               image: DecorationImage(
+                                 image: AssetImage('assets/MTN-Logo.png'),
+                                 fit: BoxFit.cover
+                                 // fit: BoxFit.cover
+                               )
+                           ),
                           ),
                           SizedBox(width: 25,),
                           Text('Credit principal',style: TextStyle(
-                              fontSize: 19,fontWeight: FontWeight.bold
+                              fontSize: 16,fontWeight: FontWeight.bold
                           ),)
                         ],
                       ),

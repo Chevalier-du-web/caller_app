@@ -33,6 +33,7 @@ dependencies:
     sdk: flutter
   flutter_phone_direct_caller: ^2.1.1
   curved_navigation_bar: ^1.0.3
+  adaptive_theme: ^3.1.1
 
 #  share_plus: ^6.3.0
 #  url_launcher: ^6.1.5
@@ -41,6 +42,7 @@ dependencies:
   url_launcher: ^5.7.10
   share: ^2.0.4
   smooth_page_indicator: ^1.0.0+2
+  shared_preferences: ^2.0.15
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -58,7 +60,8 @@ flutter_icons:
   image_path: "assets/home.png"
 flutter_native_splash:
   #image: assets/voyageur.png
-  background_image: assets/home.png
+  background_image: assets/servus.jpg
+  #  flutter build apk --release --no-sound-null-safety
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -82,6 +85,7 @@ flutter:
   assets:
      - assets/camtel_logo.jpg
      - assets/logo-orange.jpg
+     - assets/servus.jpg
      - assets/MTN-Logo.png
      - assets/Nexttel-Cameroon-Logo.png
      - assets/eneo.jpg
@@ -89,11 +93,24 @@ flutter:
      - assets/canalplus.png
      - assets/cam_water.jpg
      - assets/orangemoney.jpg
-     - assets/image1.jpg
+     - assets/image1.png
      - assets/image2.png
      - assets/home.png
-     - assets/image3.jpeg
+     - assets/profil.png
+     - assets/image3.png
      - assets/mtnmoney.jpg
+     - assets/camtel.png
+     - assets/paiementorange.PNG
+     - assets/orangegimac.PNG
+     - assets/orange_tarifs.PNG
+     - assets/orange-tarif.PNG
+     - assets/mtntransf.PNG
+     - assets/mtntarrcopie.png
+     - assets/mtnretrai.PNG
+     - assets/mtnenvois.PNG
+     - assets/mtn.PNG
+     - assets/eneoprepayorange.PNG
+     - assets/eneoorange.PNG
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+import 'package:adaptive_theme/adaptive_theme.dart';
 
 class MonNumero extends StatefulWidget {
   const MonNumero({Key? key}) : super(key: key);
@@ -9,6 +10,30 @@ class MonNumero extends StatefulWidget {
 }
 
 class _MonNumeroState extends State<MonNumero> {
+  bool  darkMode = false;
+  dynamic savedThemeMode;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getCurrentTheme();
+  }
+  Future getCurrentTheme() async {
+    savedThemeMode = await AdaptiveTheme.getThemeMode();
+    print(savedThemeMode.toString());
+    if(savedThemeMode.toString() =='AdaptiveThemeMode.dark'){
+      setState(() {
+        darkMode = true;
+      });
+    }else{
+      setState(() {
+        darkMode = false;
+      });
+    }
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,15 +76,16 @@ class _MonNumeroState extends State<MonNumero> {
                          Container(
                              width: 40,
                              height: 40,
+                             color: Colors.grey,
                              child: Image.asset('assets/logo-orange.jpg',fit: BoxFit.cover,)
                          ),
                          SizedBox(width: 15,),
-                         Text('Orange',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17),)
+                         Text('Orange',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17,color:Colors.black),)
                        ],
                      ),
                       Container(
                         margin: EdgeInsets.only(right: 10),
-                          child: Icon(Icons.call))
+                          child: Icon(Icons.call,color:Colors.black))
                     ],
                   ),
                 ),
@@ -96,12 +122,12 @@ class _MonNumeroState extends State<MonNumero> {
                              child: Image.asset('assets/MTN-Logo.png',fit: BoxFit.cover,)
                          ),
                          SizedBox(width: 15,),
-                         Text('MTN',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17),)
+                         Text('MTN',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17,color:Colors.black),)
                        ],
                      ),
                       Container(
                           margin: EdgeInsets.only(right: 10),
-                          child: Icon(Icons.call))
+                          child: Icon(Icons.call,color:Colors.black))
                     ],
                   ),
                 ),
@@ -138,12 +164,12 @@ class _MonNumeroState extends State<MonNumero> {
                              child: Image.asset('assets/camtel_logo.jpg',fit: BoxFit.cover,)
                          ),
                          SizedBox(width: 15,),
-                         Text('Camtel',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17),)
+                         Text('Camtel',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17,color:Colors.black),)
                        ],
                      ),
                       Container(
                           margin: EdgeInsets.only(right: 10),
-                          child: Icon(Icons.call))
+                          child: Icon(Icons.call,color:Colors.black))
                     ],
                   ),
                 ),
@@ -180,12 +206,12 @@ class _MonNumeroState extends State<MonNumero> {
                             child: Image.asset('assets/Nexttel-Cameroon-Logo.png',fit: BoxFit.cover,)
                         ),
                         SizedBox(width: 15,),
-                        Text('Nexttel',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17),)
+                        Text('Nexttel',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17,color:Colors.black),)
                       ],
                     ),
                       Container(
                           margin: EdgeInsets.only(right: 10),
-                          child: Icon(Icons.call))
+                          child: Icon(Icons.call,color:Colors.black))
                     ],
                   ),
                 ),

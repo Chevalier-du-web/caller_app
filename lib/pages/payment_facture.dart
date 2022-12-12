@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+import 'package:adaptive_theme/adaptive_theme.dart';
 
 class PaymentFacture extends StatefulWidget {
   const PaymentFacture({Key? key}) : super(key: key);
@@ -9,6 +10,30 @@ class PaymentFacture extends StatefulWidget {
 }
 
 class _PaymentFactureState extends State<PaymentFacture> {
+  bool  darkMode = false;
+  dynamic savedThemeMode;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getCurrentTheme();
+  }
+  Future getCurrentTheme() async {
+    savedThemeMode = await AdaptiveTheme.getThemeMode();
+    print(savedThemeMode.toString());
+    if(savedThemeMode.toString() =='AdaptiveThemeMode.dark'){
+      setState(() {
+        darkMode = true;
+      });
+    }else{
+      setState(() {
+        darkMode = false;
+      });
+    }
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,12 +90,12 @@ class _PaymentFactureState extends State<PaymentFacture> {
                             ),
                           ),
                           SizedBox(width: 4,),
-                          Text('ENEO prepaye',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 11),)
+                          Text('ENEO prepaye',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 11,color:Colors.black,),)
                         ],
                       ),
                       Container(
                           margin: EdgeInsets.only(right: 10),
-                          child: Icon(Icons.call))
+                          child: Icon(Icons.call,color:Colors.black))
                     ],
                   ),
                 ),
@@ -111,12 +136,12 @@ class _PaymentFactureState extends State<PaymentFacture> {
                             ),
                           ),
                           SizedBox(width: 5,),
-                          Text('CAMWATER',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 11),)
+                          Text('CAMWATER',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 11,color:Colors.black),)
                         ],
                       ),
                       Container(
                           margin: EdgeInsets.only(right: 10),
-                          child: Icon(Icons.call))
+                          child: Icon(Icons.call,color:Colors.black))
                     ],
                   ),
                 ),
@@ -151,12 +176,12 @@ class _PaymentFactureState extends State<PaymentFacture> {
                               child: Image.asset('assets/impot.png',fit: BoxFit.cover,)
                           ),
                           SizedBox(width: 8,),
-                          Text('IMPOTS',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 11),)
+                          Text('IMPOTS',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 11,color:Colors.black),)
                         ],
                       ),
                       Container(
                           margin: EdgeInsets.only(right: 10),
-                          child: Icon(Icons.call))
+                          child: Icon(Icons.call,color:Colors.black))
                     ],
                   ),
                 ),
@@ -191,12 +216,12 @@ class _PaymentFactureState extends State<PaymentFacture> {
                               child: Image.asset('assets/canalplus.png',fit: BoxFit.cover,)
                           ),
                           SizedBox(width: 8,),
-                          Text('CANAL+',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 12),)
+                          Text('CANAL+',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 12,color:Colors.black),)
                         ],
                       ),
                       Container(
                           margin: EdgeInsets.only(right: 10),
-                          child: Icon(Icons.call))
+                          child: Icon(Icons.call,color:Colors.black))
                     ],
                   ),
                 ),
@@ -218,10 +243,10 @@ class _PaymentFactureState extends State<PaymentFacture> {
         height: 200,
         child: Column(
           children: [
-            SizedBox(height: 15,),
-
+            SizedBox(height: 10,),
+            Text('Payez avec  ',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),)
             //paiement orange ...
-            GestureDetector(
+            ,GestureDetector(
               onTap: ()async{
 
                 Navigator.pop(context);
@@ -243,8 +268,8 @@ class _PaymentFactureState extends State<PaymentFacture> {
                   children: [
                     SizedBox(width: 9,),
                     Container(
-                      height: 60,
-                      width: 60,
+                      height: 45,
+                      width: 45,
                       decoration: BoxDecoration(
                           color: Colors.transparent,
                           borderRadius: BorderRadius.circular(150),
@@ -256,7 +281,7 @@ class _PaymentFactureState extends State<PaymentFacture> {
                     ),
                     SizedBox(width: 25,),
                     Text('Orange money',style: TextStyle(
-                        fontSize: 17,fontWeight: FontWeight.bold
+                        fontSize: 16,fontWeight: FontWeight.bold
                     ),)
                   ],
                 ),
@@ -286,8 +311,8 @@ class _PaymentFactureState extends State<PaymentFacture> {
                   children: [
                     SizedBox(width: 9,),
                     Container(
-                      height: 60,
-                      width: 60,
+                      height: 45,
+                      width: 45,
                       decoration: BoxDecoration(
                         color: Colors.yellow,
                         borderRadius: BorderRadius.circular(150),
@@ -299,7 +324,7 @@ class _PaymentFactureState extends State<PaymentFacture> {
                     ),
                     SizedBox(width: 25,),
                     Text('MTN MoMo',style: TextStyle(
-                        fontSize: 17,fontWeight: FontWeight.bold
+                        fontSize: 16,fontWeight: FontWeight.bold
                     ),)
                   ],
                 ),

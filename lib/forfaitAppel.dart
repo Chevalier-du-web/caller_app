@@ -143,45 +143,126 @@ class _ForfaitAppelState extends State<ForfaitAppel> {
       'quantite':'10000F 115000F',
       'code':'*123*3*1*2*3*4#'
     },
+    {
+      'photo':'assets/MTN-Logo.png',
+      'forfait':'Yamo Kongossa',
+      'quantite':'50F 5 minutes appels /24H',
+      'code':'*220*1*1*1#'
+    },
+    {
+      'photo':'assets/MTN-Logo.png',
+      'forfait':'Yamo Kongossa',
+      'quantite':'199F 1450F/30 jours',
+      'code':'*220*1*1*2#'
+    },
+    {
+      'photo':'assets/MTN-Logo.png',
+      'forfait':'Yamo Kongossa',
+      'quantite':'399F 2925F/30 jours',
+      'code':'*220*1*1*3#'
+    }, {
+      'photo':'assets/MTN-Logo.png',
+      'forfait':'Yamo Kongossa',
+      'quantite':'1000F 10.000F/30 jours',
+      'code':'*220*1*1*4#'
+    },
+    {
+      'photo':'assets/MTN-Logo.png',
+      'forfait':'Yamo 5kolo',
+      'quantite':'5000F 15.000F tous  reseaux \n +3Go + SMS illimite 30 jours',
+      'code':'*220*1*4*1#'
+    }, {
+      'photo':'assets/MTN-Logo.png',
+      'forfait':'Yamo Kongossa',
+      'quantite':'500F 2.700F/7jours \n +43.000F MTN/minuit/7 jours',
+      'code':'*222*0#'
+    }, {
+      'photo':'assets/MTN-Logo.png',
+      'forfait':'MTN tous reseaux',
+      'quantite':'250F 1100F/24H',
+      'code':'*222*1*1#'
+    }, {
+      'photo':'assets/MTN-Logo.png',
+      'forfait':'MTN tous reseaux',
+      'quantite':'500F 2500F/3 jours',
+      'code':'*222*1*2#'
+    }, {
+      'photo':'assets/MTN-Logo.png',
+      'forfait':'MTN tous reseaux',
+      'quantite':'1000F 5550F/7 jours',
+      'code':'*222*1*3#'
+    },
+    {
+      'photo':'assets/MTN-Logo.png',
+      'forfait':'MTN tous reseaux',
+      'quantite':'3.000F 18.950F/30 jours',
+      'code':'*222*1*4#'
+    }, {
+      'photo':'assets/MTN-Logo.png',
+      'forfait':'MTN uniquement',
+      'quantite':'250F 3000F/24H',
+      'code':'*222*2*1#'
+    }, {
+      'photo':'assets/MTN-Logo.png',
+      'forfait':'MTN uniquement',
+      'quantite':'500F 6100F/3 jours',
+      'code':'*222*2*2#'
+    }, {
+      'photo':'assets/MTN-Logo.png',
+      'forfait':'MTN uniquement',
+      'quantite':'1000F 12.450F/7 jours',
+      'code':'*222*2*3#'
+    },
+    {
+      'photo':'assets/MTN-Logo.png',
+      'forfait':'MTN uniquement',
+      'quantite':'3000F 42.500F/30 jours',
+      'code':'*222*2*4#'
+    }, {
+      'photo':'assets/MTN-Logo.png',
+      'forfait':'MTN uniquement',
+      'quantite':'variable',
+      'code':'*200#'
+    },
   ];
   var camtel = [{
-    'photo':'assets/camtel_logo.jpg',
+    'photo':'assets/camtel.png',
     'forfait':'Blue One ',
     'quantite':'2.000F 15min+100SMS /7jours',
     'code':'*825*5*1*1*2#'
   },
     {
-      'photo':'assets/camtel_logo.jpg',
+      'photo':'assets/camtel.png',
       'forfait':'Blue One ',
       'quantite':'3.000F 30min+200SMS /30jours',
       'code':'*825*5*1*1*3#'
     },
     {
-      'photo':'assets/camtel_logo.jpg',
+      'photo':'assets/camtel.png',
       'forfait':'Blue One ',
       'quantite':'5.000F 45min+300SMS /30jours',
       'code':'*825*5*1*1*4#'
     },
     {
-      'photo':'assets/camtel_logo.jpg',
+      'photo':'assets/camtel.png',
       'forfait':'Blue One ',
       'quantite':'   10.000F 60min+400SMS \npendant 30 jours',
       'code':'*825*5*1*1*5#'
     },
     {
-      'photo':'assets/camtel_logo.jpg',
+      'photo':'assets/camtel.png',
       'forfait':'Blue One ',
       'quantite':'   20.000F 75min+500SMS \npendant 30 jours',
       'code':'*825*5*1*1*6#'
     },
     {
-      'photo':'assets/camtel_logo.jpg',
+      'photo':'assets/camtel.png',
       'forfait':'Blue One ',
       'quantite':'250F 5Go/24H(00H-06H)',
       'code':'*825*5*1*1*15#'
     },
     {
-      'photo':'assets/camtel_logo.jpg',
+      'photo':'assets/camtel.png',
       'forfait':'Appel illimite ',
       'quantite':'2.000F illimite pendant 30 jours',
       'code':'*825*5*1*3*17#'
@@ -257,7 +338,11 @@ class _ForfaitAppelState extends State<ForfaitAppel> {
                     itemCount: imagesReseaux.length,
                     itemBuilder: (context,index){
                       return Container(
-                        color: Colors.grey.withOpacity(.3),
+                        decoration: BoxDecoration(
+                            color: Colors.grey.withOpacity(.3),
+                            borderRadius: BorderRadius.circular(90)
+                        ),
+                        margin: EdgeInsets.all(2),
                         child: GestureDetector(
                           onTap: (){
                             setState(() {
@@ -272,6 +357,7 @@ class _ForfaitAppelState extends State<ForfaitAppel> {
                             height: 60,
                             width: 60,
                             decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(90),
                                 image: DecorationImage(
                                     image: AssetImage(imagesReseaux[index]),fit: BoxFit.cover
                                 )

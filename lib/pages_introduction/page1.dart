@@ -5,28 +5,33 @@ class Page1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //dimensions de l'ecran ....
+    double _w = MediaQuery.of(context).size.width;
+    double _h = MediaQuery.of(context).size.height;
+
     return Column(
 
       children: [
-        SizedBox(height: 40,),
+
         Container(
-          height: 300,
+          margin: EdgeInsets.only(top: _h/8),
+          height: 240,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(90),
             image: DecorationImage(
-              image: AssetImage('assets/image1.jpg')
+              image: AssetImage('assets/image1.png')
             )
           ),
         ),
         Container(
-      margin: EdgeInsets.all(30),
-      child: Text('Bienvenue sur Caller App,',
+      margin: EdgeInsets.only(left:_h/19,right: _h/19,top: _h/25,),
+      child: Text('Bienvenue sur Servus.',
         style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)),
         Container(
-          margin: EdgeInsets.only(top:30,left: 40,right: 40),
-          child: Text('     Votre application d\'activation ,'
+          margin: EdgeInsets.only(top:_h/30,left: _w/9,right: _w/9),
+          child: Text('   Votre application d\'activation ,'
               'de consultation de vos forfaits ,'
-              ' soldes et de paiement de facture',style: TextStyle(fontSize: 18)),
+              ' soldes et de paiement des factures',style: TextStyle(fontSize: 16)),
         )
       ],
     );

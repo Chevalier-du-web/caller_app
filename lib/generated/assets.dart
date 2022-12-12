@@ -3,18 +3,32 @@ class Assets {
   Assets._();
 
   static const String assetsCamWater = 'assets/cam_water.jpg';
+  static const String assetsCamtel = 'assets/camtel.png';
   static const String assetsCamtelLogo = 'assets/camtel_logo.jpg';
   static const String assetsCanalplus = 'assets/canalplus.png';
   static const String assetsEneo = 'assets/eneo.jpg';
+  static const String assetsEneoorange = 'assets/eneoorange.PNG';
+  static const String assetsEneoprepayorange = 'assets/eneoprepayorange.PNG';
   static const String assetsHome = 'assets/home.png';
-  static const String assetsImage1 = 'assets/image1.jpg';
+  static const String assetsImage1 = 'assets/image1.png';
   static const String assetsImage2 = 'assets/image2.png';
-  static const String assetsImage3 = 'assets/image3.jpeg';
+  static const String assetsImage3 = 'assets/image3.png';
   static const String assetsImpot = 'assets/impot.png';
-  static const String assetsLogo-orange = 'assets/logo-orange.jpg';
-  static const String assetsMTN-Logo = 'assets/MTN-Logo.png';
+  static const String assetsLogoOrange = 'assets/logo-orange.jpg';
+  static const String assetsMTNLogo = 'assets/MTN-Logo.png';
+  static const String assetsMtn = 'assets/mtn.PNG';
+  static const String assetsMtnenvois = 'assets/mtnenvois.PNG';
   static const String assetsMtnmoney = 'assets/mtnmoney.jpg';
-  static const String assetsNexttel-Cameroon-Logo = 'assets/Nexttel-Cameroon-Logo.png';
+  static const String assetsMtnretrai = 'assets/mtnretrai.PNG';
+  static const String assetsMtntarrcopie = 'assets/mtntarrcopie.png';
+  static const String assetsMtntransf = 'assets/mtntransf.PNG';
+  static const String assetsNexttelCameroonLogo = 'assets/Nexttel-Cameroon-Logo.png';
+  static const String assetsOrangeTarif = 'assets/orange-tarif.png';
+  static const String assetsOrangeTarifs = 'assets/orange_tarifs.PNG';
+  static const String assetsOrangegimac = 'assets/orangegimac.PNG';
   static const String assetsOrangemoney = 'assets/orangemoney.jpg';
+  static const String assetsPaiementorange = 'assets/paiementorange.PNG';
+  static const String assetsProfil = 'assets/profil.png';
+  static const String assetsServus = 'assets/servus.jpg';
 
 }

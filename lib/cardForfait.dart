@@ -25,9 +25,10 @@ class CardForfait extends StatelessWidget {
                 height: 40,
                decoration: BoxDecoration(
                  color: Colors.transparent,
+                 borderRadius: BorderRadius.circular(90),
                  image: DecorationImage(
                    image: AssetImage(photo),
-                   // fit: BoxFit.cover
+                    fit: BoxFit.cover
                  )
                ),
               ),

@@ -5,6 +5,8 @@ import 'drawerHome.dart';
 import 'forfaitAppel.dart';
 import 'forfaitInternet.dart';
 import 'forfaitSMS.dart';
+import 'package:adaptive_theme/adaptive_theme.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -15,12 +17,15 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
   late TabController _controller ;
+  dynamic savedThemeMode;
+  bool  darkMode = false;
 
   //Et ces fonctions vont permettre l'initialisation et la mise a jour du contoller..
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    getCurrentTheme();
     _controller = TabController(length: 4, vsync: this);
     _controller.addListener(() {
       setState(() {
@@ -34,12 +39,44 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
     super.dispose();
 
   }
+  Future getCurrentTheme() async {
+    savedThemeMode = await AdaptiveTheme.getThemeMode();
+    print(savedThemeMode.toString());
+    if(savedThemeMode.toString() =='AdaptiveThemeMode.dark'){
+      setState(() {
+        darkMode = true;
+      });
+    }else{
+      setState(() {
+        darkMode = false;
+      });
+    }
 
+  }
+
+  Icon iconDark = Icon(Icons.mode_night_outlined,color: Colors.white);
+  Icon iconLight = Icon(Icons.light_mode_outlined,color: Colors.white);
+  bool modeDark = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Caller'),
+        title: Text('Servus'),
+        //backgroundColor: darkMode?Colors.deepPurple:Colors.blue,
+        actions: [
+          IconButton(onPressed: (){
+            setState(() {
+              modeDark = !modeDark;
+            });
+
+            if (modeDark==true){
+              AdaptiveTheme.of(context).setDark();
+            }else{
+              AdaptiveTheme.of(context).setLight();
+            }
+          },
+              icon: modeDark?iconDark:iconLight)
+        ],
         bottom: TabBar(
           controller: _controller,
           tabs: [

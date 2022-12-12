@@ -345,161 +345,202 @@ class _ForfaitInternetState extends State<ForfaitInternet> {
       'quantite':'variable',
       'code':'*123*10#'
     },
+    {
+      'photo':'assets/MTN-Logo.png',
+      'forfait':'Forfait TokTok',
+      'quantite':'100F 200Mo/24H',
+      'code':'*220*1*0*1#'
+    },
+    {
+      'photo':'assets/MTN-Logo.png',
+      'forfait':'Forfait TokTok',
+      'quantite':'250F 200Mo/jour \n pendant 3 jours',
+      'code':'*220*1*0*2#'
+    },
+    {
+      'photo':'assets/MTN-Logo.png',
+      'forfait':'Forfait TokTok',
+      'quantite':'500F 200Mo/jour \n pendant 7 jours',
+      'code':'*220*1*0*3#'
+    },
+    {
+      'photo':'assets/MTN-Logo.png',
+      'forfait':'Yamo Surf',
+      'quantite':'50F 50Mo/24H',
+      'code':'*220*1*2*1#'
+    },
+    {
+      'photo':'assets/MTN-Logo.png',
+      'forfait':'Yamo Surf',
+      'quantite':'499F 870Mo/30 jours',
+      'code':'*220*1*2*2#'
+    },
+    {
+      'photo':'assets/MTN-Logo.png',
+      'forfait':'Yamo Surf',
+      'quantite':'1149F 2.2Go/30 jours',
+      'code':'*220*1*2*3#'
+    },
+    {
+      'photo':'assets/MTN-Logo.png',
+      'forfait':'Yamo Surf',
+      'quantite':'2099F 4.2Go/30 jours',
+      'code':'*220*1*2*4#'
+    },
+    {
+      'photo':'assets/MTN-Logo.png',
+      'forfait':'Wanda Net 30 jours',
+      'quantite':'variable',
+      'code':'*123*10#'
+    },
+
   ];
   var camtel = [
     {
-      'photo':'assets/camtel_logo.jpg',
+      'photo':'assets/camtel.png',
       'forfait':'Internet X-DAY',
       'quantite':'',
       'code':'*825*2*2*1*1#'
     }, {
-      'photo':'assets/camtel_logo.jpg',
+      'photo':'assets/camtel.png',
       'forfait':'Blue mo',
       'quantite':'100F 1Go/3h',
       'code':'*825*2*2*1*2#'
     }, {
-      'photo':'assets/camtel_logo.jpg',
+      'photo':'assets/camtel.png',
       'forfait':'Blue mo',
       'quantite':'300F 1.5Go/jr',
       'code':'*825*2*2*1*3#'
     },
     {
-      'photo':'assets/camtel_logo.jpg',
+      'photo':'assets/camtel.png',
       'forfait':'FAP',
       'quantite':'500F 1Go/2jours',
       'code':'*825*2*2*1*4#'
-    },
-    {
-      'photo':'assets/camtel_logo.jpg',
+    }, {
+      'photo':'assets/camtel.png',
       'forfait':'FAKO XS',
       'quantite':'500F 2Go/1jour',
       'code':'*825*2*2*1*5#'
     }, {
-      'photo':'assets/camtel_logo.jpg',
+      'photo':'assets/camtel.png',
       'forfait':'Semaine XWEEK',
       'quantite':'variable',
       'code':'*825*2*2*2*1#'
     }, {
-      'photo':'assets/camtel_logo.jpg',
+      'photo':'assets/camtel.png',
       'forfait':'Blue mo',
       'quantite':'1000F 2Go',
       'code':'*825*2*2*2*2#'
     },
     {
-      'photo':'assets/camtel_logo.jpg',
+      'photo':'assets/camtel.png',
       'forfait':'DEAL',
       'quantite':'3000F 5Go',
       'code':'*825*2*2*2*3#'
-    },
-    {
-      'photo':'assets/camtel_logo.jpg',
+    }, {
+      'photo':'assets/camtel.png',
       'forfait':'X-STARTER',
       'quantite':'',
       'code':'*825*2*2*3*1#'
     }, {
-      'photo':'assets/camtel_logo.jpg',
+      'photo':'assets/camtel.png',
       'forfait':'X-PREMIUM',
       'quantite':'',
       'code':'*825*2*2*3*2#'
-    },
-    {
-      'photo':'assets/camtel_logo.jpg',
+    }, {
+      'photo':'assets/camtel.png',
       'forfait':'X-BUSINESS',
       'quantite':'',
       'code':'*825*2*2*3*3#'
-    },
-    {
-      'photo':'assets/camtel_logo.jpg',
+    }, {
+      'photo':'assets/camtel.png',
       'forfait':'X-TREM ',
       'quantite':'',
       'code':'*825*2*2*3*4#'
     },
     {
-      'photo':'assets/camtel_logo.jpg',
+      'photo':'assets/camtel.png',
       'forfait':'X-TREM UNLIMITED ',
       'quantite':'',
       'code':'*825*2*2*3*4#'
     }, {
-      'photo':'assets/camtel_logo.jpg',
+      'photo':'assets/camtel.png',
       'forfait':'Blue mo XXL ',
       'quantite':'5000F 10Go/30jours',
       'code':'*825*2*2*3*5#'
-    },
-    {
-      'photo':'assets/camtel_logo.jpg',
+    }, {
+      'photo':'assets/camtel.png',
       'forfait':'SKATE ',
       'quantite':'10.000f 20Go/30jours',
       'code':'*825*2*2*3*6#'
     }, {
-      'photo':'assets/camtel_logo.jpg',
+      'photo':'assets/camtel.png',
       'forfait':'PREMIUM ',
       'quantite':'20.000F 50Go/30jours',
       'code':'*825*2*2*3*7#'
-    },
-    {
-      'photo':'assets/camtel_logo.jpg',
+    }, {
+      'photo':'assets/camtel.png',
       'forfait':'ENJOY ',
       'quantite':'35.000F 100Go/30jours',
       'code':'*825*2*2*3*8#'
     },
     {
-      'photo':'assets/camtel_logo.jpg',
+      'photo':'assets/camtel.png',
       'forfait':'Blue Go S ',
       'quantite':'   2.000F 300mo/jour \npendant 30 jours',
       'code':'*825*2*2*3*9#'
     }, {
-      'photo':'assets/camtel_logo.jpg',
+      'photo':'assets/camtel.png',
       'forfait':'Blue M ',
       'quantite':'   5.000F 850Mo/jour \npendant 30 jours',
       'code':'*825*2*2*3*10#'
     }, {
-      'photo':'assets/camtel_logo.jpg',
+      'photo':'assets/camtel.png',
       'forfait':'Blue L ',
       'quantite':'   10.000F 2Go/jour \npendant 30 jours',
       'code':'*825*2*2*3*11#'
-    },
-    {
-      'photo':'assets/camtel_logo.jpg',
+    }, {
+      'photo':'assets/camtel.png',
       'forfait':'Blue Go XL ',
       'quantite':'   20.000F 4.5Go/jour \npendant 30 jours',
       'code':'*825*2*2*3*12#'
     },
     {
-      'photo':'assets/camtel_logo.jpg',
+      'photo':'assets/camtel.png',
       'forfait':'Blue  XXL ',
       'quantite':'   35.000F 8Go/jour\n pendant 30 jours',
       'code':'*825*2*2*3*13#'
     }, {
-      'photo':'assets/camtel_logo.jpg',
+      'photo':'assets/camtel.png',
       'forfait':'Plus S ',
       'quantite':'15.000F 60Go/30jours',
       'code':'*825*2*2*3*14#'
     }, {
-      'photo':'assets/camtel_logo.jpg',
+      'photo':'assets/camtel.png',
       'forfait':'Plus M ',
       'quantite':'25.000F 135Go/30jours',
       'code':'*825*2*2*3*15#'
-    },
-    {
-      'photo':'assets/camtel_logo.jpg',
+    }, {
+      'photo':'assets/camtel.png',
       'forfait':'Blue go plus  ',
       'quantite':'40.000F 240Go/30jours',
       'code':'*825*2*2*3*16#'
     },
     {
-      'photo':'assets/camtel_logo.jpg',
+      'photo':'assets/camtel.png',
       'forfait':'Blue Home  mois ',
       'quantite':'15.000F 35Go illimite 1.5 Mbps',
       'code':'*825*5*1*4*1#'
     },
     {
-      'photo':'assets/camtel_logo.jpg',
+      'photo':'assets/camtel.png',
       'forfait':'Blue Home  mois ',
       'quantite':'25.000F 75Go illimite 2 Mbps',
       'code':'*825*5*1*4*2#'
     },
     {
-      'photo':'assets/camtel_logo.jpg',
+      'photo':'assets/camtel.png',
       'forfait':'Blue Home  mois ',
       'quantite':'40.000F 150Go illimite 2.5 Mbps',
       'code':'*825*5*1*4*3#'
@@ -511,7 +552,8 @@ class _ForfaitInternetState extends State<ForfaitInternet> {
       'forfait':'Fly 24H',
       'quantite':'50F 50Mo',
       'code':'*865#'
-    }, {
+    },
+    {
       'photo':'assets/Nexttel-Cameroon-Logo.png',
       'forfait':'Fly 24H',
       'quantite':'150F 150Mo',
@@ -521,7 +563,8 @@ class _ForfaitInternetState extends State<ForfaitInternet> {
       'forfait':'Fly 24H',
       'quantite':'250F 250Mo',
       'code':'*865#'
-    }, {
+    },
+    {
       'photo':'assets/Nexttel-Cameroon-Logo.png',
       'forfait':'Fly 24H',
       'quantite':'500F 500Mo',
@@ -536,8 +579,7 @@ class _ForfaitInternetState extends State<ForfaitInternet> {
       'forfait':'Fly 7 jours',
       'quantite':'700F 200Mo',
       'code':'*865#'
-    },
-    {
+    }, {
       'photo':'assets/Nexttel-Cameroon-Logo.png',
       'forfait':'Fly 7 jours',
       'quantite':'1000F 500Mo',
@@ -547,7 +589,8 @@ class _ForfaitInternetState extends State<ForfaitInternet> {
       'forfait':'Fly 7 jours',
       'quantite':'2000F 1536Mo',
       'code':'*865#'
-    }, {
+    },
+    {
       'photo':'assets/Nexttel-Cameroon-Logo.png',
       'forfait':'Fly 30 jours',
       'quantite':'4 000F 3072Mo+4000F',
@@ -557,8 +600,7 @@ class _ForfaitInternetState extends State<ForfaitInternet> {
       'forfait':'Fly 30 jours',
       'quantite':'12 000F 12288Mo',
       'code':'*865#'
-    },
-    {
+    },{
       'photo':'assets/Nexttel-Cameroon-Logo.png',
       'forfait':'Fly 30 jours',
       'quantite':'15 000F 15 360Mo',
@@ -573,13 +615,13 @@ class _ForfaitInternetState extends State<ForfaitInternet> {
       'forfait':'Nexttel Socials jour',
       'quantite':'  300F reseaux \nsociaux illimite',
       'code':'*865#'
-    }, {
+    },
+    {
       'photo':'assets/Nexttel-Cameroon-Logo.png',
       'forfait':'Nexttel Socials semaine',
       'quantite':'   1000F reseaux \nsociaux illimite',
       'code':'*865#'
-    },
-    {
+    }, {
       'photo':'assets/Nexttel-Cameroon-Logo.png',
       'forfait':'Nexttel Socials mois',
       'quantite':'   2000F reseaux \nsociaux illimite',
@@ -710,7 +752,11 @@ class _ForfaitInternetState extends State<ForfaitInternet> {
                 itemCount: imagesReseaux.length,
                   itemBuilder: (context,index){
                 return Container(
-                  color: Colors.grey.withOpacity(.3),
+                  decoration: BoxDecoration(
+                    color: Colors.grey.withOpacity(.3),
+                    borderRadius: BorderRadius.circular(90)
+                  ),
+                  margin: EdgeInsets.all(2),
                   child: GestureDetector(
                     onTap: (){
                       setState(() {
@@ -721,10 +767,11 @@ class _ForfaitInternetState extends State<ForfaitInternet> {
                       });
                     },
                     child: Container(
-                      margin: EdgeInsets.all(7),
-                      height: 60,
+                      margin: EdgeInsets.all(5),
+                      height: 50,
                       width: 60,
                       decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(150),
                         image: DecorationImage(
                           image: AssetImage(imagesReseaux[index]),fit: BoxFit.cover
                         )

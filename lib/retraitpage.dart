@@ -1,5 +1,7 @@
 import 'package:caller/choix_reseau.dart';
 import 'package:caller/option_money.dart';
+import 'package:caller/pages/tarif_mtn.dart';
+import 'package:caller/pages/tarif_orange.dart';
 import 'package:caller/transfert_argent.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
@@ -16,11 +18,13 @@ class _RetraitPageState extends State<RetraitPage> {
 
   @override
   Widget build(BuildContext context) {
+  double _h = MediaQuery.of(context).size.height;
     return SingleChildScrollView(
       child: Column(
         children: [
-          SizedBox(height: 40,),
+
           Container(
+            margin: EdgeInsets.only(top: _h/12),
             padding: EdgeInsets.all(18),
             decoration: BoxDecoration(
               color: Colors.transparent,
@@ -90,6 +94,36 @@ class _RetraitPageState extends State<RetraitPage> {
                 ],
               ),
             ),
+          ),
+          SizedBox(height: 30,),
+          Center(
+            child: Container(
+              width: 250,
+              child: Row(
+                children: [
+                  Expanded(
+                    child: ElevatedButton(onPressed: ()=>ChoixReseaux('tarifs'),
+                      style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all(Colors.blue),
+                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10)
+                              )
+                          )
+                      ),
+                      child:
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(35, 15, 35, 15),
+                        child: Text('Voir les tarifs',style: TextStyle(
+                            fontSize: 16,color: Colors.white
+
+                        ),),
+                      ),),
+
+                  )
+                ],
+              ),
+            ),
           )
 
         ],
@@ -102,14 +136,16 @@ class _RetraitPageState extends State<RetraitPage> {
         height: 200,
         child: Column(
           children: [
-            SizedBox(height: 15,),
+            SizedBox(height: 10,),
+            Text('Choix du reseau ',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
             GestureDetector(
               onTap: (){
                 Navigator.pop(context);
                 type =='retrait'?
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>RetraitArgent()))
-                    : Navigator.push(context, MaterialPageRoute(builder: (context)=>TransfertArgent(type: 1,)));
-
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>RetraitArgent(type: 1,)))
+                    : type =='transfert'?
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>TransfertArgent(type: 1,)))
+                : Navigator.push(context, MaterialPageRoute(builder: (context)=>TarifsOrange()));
 
               },
               child: Container(
@@ -123,8 +159,8 @@ class _RetraitPageState extends State<RetraitPage> {
                   children: [
                     SizedBox(width: 9,),
                     Container(
-                      height: 60,
-                      width: 60,
+                      height: 45,
+                      width: 45,
                       decoration: BoxDecoration(
                           color: Colors.yellow,
                           borderRadius: BorderRadius.circular(150),
@@ -147,8 +183,10 @@ class _RetraitPageState extends State<RetraitPage> {
                 print(type);
                 Navigator.pop(context);
                 type =='retrait'?
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>RetraitArgent()))
-                    : Navigator.push(context, MaterialPageRoute(builder: (context)=>TransfertArgent(type: 2,)));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>RetraitArgent(type: 2,)))
+                    : type =='transfert'?
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>TransfertArgent(type: 2,)))
+                :Navigator.push(context, MaterialPageRoute(builder: (context)=>TarifsMTN()));
 
 
               },
@@ -163,8 +201,8 @@ class _RetraitPageState extends State<RetraitPage> {
                   children: [
                     SizedBox(width: 9,),
                     Container(
-                      height: 60,
-                      width: 60,
+                      height: 45,
+                      width: 45,
                       decoration: BoxDecoration(
                           color: Colors.yellow,
                           borderRadius: BorderRadius.circular(150),
