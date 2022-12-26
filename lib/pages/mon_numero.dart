@@ -135,7 +135,7 @@ class _MonNumeroState extends State<MonNumero> {
               SizedBox(height: 20,),
               GestureDetector(
                 onTap: ()async{
-                  await FlutterPhoneDirectCaller.callNumber('*825#');
+                  await FlutterPhoneDirectCaller.callNumber('*825*1*3#');
                 },
                 child: Container(
                   width: 230,

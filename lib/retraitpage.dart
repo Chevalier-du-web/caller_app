@@ -1,5 +1,6 @@
 import 'package:caller/choix_reseau.dart';
 import 'package:caller/option_money.dart';
+import 'package:caller/pages/callbox_page.dart';
 import 'package:caller/pages/tarif_mtn.dart';
 import 'package:caller/pages/tarif_orange.dart';
 import 'package:caller/transfert_argent.dart';
@@ -35,7 +36,7 @@ class _RetraitPageState extends State<RetraitPage> {
                 fontWeight: FontWeight.bold),),
           ),
 
-          SizedBox(height: 60,),
+          SizedBox(height: 40,),
           Center(
             child: Container(
               width: 250,
@@ -65,7 +66,7 @@ class _RetraitPageState extends State<RetraitPage> {
               ),
             ),
           ),
-          SizedBox(height: 30,),
+          SizedBox(height: 20,),
           Center(
             child: Container(
               width: 250,
@@ -95,7 +96,37 @@ class _RetraitPageState extends State<RetraitPage> {
               ),
             ),
           ),
-          SizedBox(height: 30,),
+          SizedBox(height: 20,),
+          Center(
+            child: Container(
+              width: 250,
+              child: Row(
+                children: [
+                  Expanded(
+                    child: ElevatedButton(onPressed: ()=>ChoixReseaux('callbox'),
+                      style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all(Colors.blue),
+                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10)
+                              )
+                          )
+                      ),
+                      child:
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(35, 15, 35, 15),
+                        child: Text('Call box (transfert)',style: TextStyle(
+                            fontSize: 16,color: Colors.white
+
+                        ),),
+                      ),),
+
+                  )
+                ],
+              ),
+            ),
+          ),
+          SizedBox(height: 20,),
           Center(
             child: Container(
               width: 250,
@@ -114,7 +145,7 @@ class _RetraitPageState extends State<RetraitPage> {
                       child:
                       Padding(
                         padding: EdgeInsets.fromLTRB(35, 15, 35, 15),
-                        child: Text('Voir les tarifs',style: TextStyle(
+                        child: Text('Tarification',style: TextStyle(
                             fontSize: 16,color: Colors.white
 
                         ),),
@@ -145,7 +176,9 @@ class _RetraitPageState extends State<RetraitPage> {
                 Navigator.push(context, MaterialPageRoute(builder: (context)=>RetraitArgent(type: 1,)))
                     : type =='transfert'?
                 Navigator.push(context, MaterialPageRoute(builder: (context)=>TransfertArgent(type: 1,)))
-                : Navigator.push(context, MaterialPageRoute(builder: (context)=>TarifsOrange()));
+                : type =='callbox'?
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>CallBoxPage(type: 0)))
+                    :Navigator.push(context, MaterialPageRoute(builder: (context)=>TarifsOrange()));
 
               },
               child: Container(
@@ -165,13 +198,13 @@ class _RetraitPageState extends State<RetraitPage> {
                           color: Colors.yellow,
                           borderRadius: BorderRadius.circular(150),
                           image: DecorationImage(
-                            image: AssetImage('assets/orangemoney.jpg'),
-                            // fit: BoxFit.cover
+                            image: AssetImage(type =='callbox'?'assets/logo-orange.jpg':'assets/orangemoney.jpg'),
+                             fit: BoxFit.cover
                           )
                       ),
                     ),
                     SizedBox(width: 25,),
-                    Text('Orange money',style: TextStyle(
+                    Text(type =='callbox'?'Orange':'Orange money',style: TextStyle(
                       fontSize: 17,fontWeight: FontWeight.bold
                     ),)
                   ],
@@ -186,7 +219,9 @@ class _RetraitPageState extends State<RetraitPage> {
                 Navigator.push(context, MaterialPageRoute(builder: (context)=>RetraitArgent(type: 2,)))
                     : type =='transfert'?
                 Navigator.push(context, MaterialPageRoute(builder: (context)=>TransfertArgent(type: 2,)))
-                :Navigator.push(context, MaterialPageRoute(builder: (context)=>TarifsMTN()));
+                :type =='callbox'?
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>CallBoxPage(type: 1 )))
+                    : Navigator.push(context, MaterialPageRoute(builder: (context)=>TarifsMTN()));
 
 
               },
@@ -207,13 +242,13 @@ class _RetraitPageState extends State<RetraitPage> {
                           color: Colors.yellow,
                           borderRadius: BorderRadius.circular(150),
                           image: DecorationImage(
-                            image: AssetImage('assets/mtnmoney.jpg'),
-                            // fit: BoxFit.cover
+                            image: AssetImage(type =='callbox'?'assets/MTN-Logo.png':'assets/mtnmoney.jpg'),
+                             fit: BoxFit.cover
                           )
                       ),
                     ),
                     SizedBox(width: 25,),
-                    Text('MTN MoMo',style: TextStyle(
+                    Text(type =='callbox'?'MTN':'MTN MoMo',style: TextStyle(
                         fontSize: 17,fontWeight: FontWeight.bold
                     ),)
                   ],

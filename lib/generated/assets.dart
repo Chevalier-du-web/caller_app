@@ -5,6 +5,7 @@ class Assets {
   static const String assetsCamWater = 'assets/cam_water.jpg';
   static const String assetsCamtel = 'assets/camtel.png';
   static const String assetsCamtelLogo = 'assets/camtel_logo.jpg';
+  static const String assetsCamtelo = 'assets/camtelo.png';
   static const String assetsCanalplus = 'assets/canalplus.png';
   static const String assetsEneo = 'assets/eneo.jpg';
   static const String assetsEneoorange = 'assets/eneoorange.PNG';

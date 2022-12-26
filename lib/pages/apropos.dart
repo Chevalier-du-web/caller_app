@@ -14,7 +14,7 @@ class Apropos extends StatelessWidget {
         " Orange, MTN, Camtel ,Nexttel .\n\n La version actuelle "
         "se vera changée au fil du temps . Car les forfaits devront être "
         "mises à jour . \n\n\nN'hésitez pas à nous contacter en cas"
-        " de besoin des services et aussi lors de l'utilisation du logitiel. \n\n\n "
+        " de besoin des services et aussi lors de l'utilisation du logiciel. \n\n\n "
         "Merci et bonne utilisation ...." ;
     return Scaffold(
       appBar: AppBar(

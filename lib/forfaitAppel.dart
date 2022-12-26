@@ -169,7 +169,7 @@ class _ForfaitAppelState extends State<ForfaitAppel> {
     {
       'photo':'assets/MTN-Logo.png',
       'forfait':'Yamo 5kolo',
-      'quantite':'5000F 15.000F tous  reseaux \n +3Go + SMS illimite 30 jours',
+      'quantite':'5000F 15.000F tous  réseaux \n +3Go + SMS illimité 30 jours',
       'code':'*220*1*4*1#'
     }, {
       'photo':'assets/MTN-Logo.png',
@@ -178,17 +178,17 @@ class _ForfaitAppelState extends State<ForfaitAppel> {
       'code':'*222*0#'
     }, {
       'photo':'assets/MTN-Logo.png',
-      'forfait':'MTN tous reseaux',
+      'forfait':'MTN tous réseaux',
       'quantite':'250F 1100F/24H',
       'code':'*222*1*1#'
     }, {
       'photo':'assets/MTN-Logo.png',
-      'forfait':'MTN tous reseaux',
+      'forfait':'MTN tous réseaux',
       'quantite':'500F 2500F/3 jours',
       'code':'*222*1*2#'
     }, {
       'photo':'assets/MTN-Logo.png',
-      'forfait':'MTN tous reseaux',
+      'forfait':'MTN tous réseaux',
       'quantite':'1000F 5550F/7 jours',
       'code':'*222*1*3#'
     },
@@ -226,45 +226,45 @@ class _ForfaitAppelState extends State<ForfaitAppel> {
     },
   ];
   var camtel = [{
-    'photo':'assets/camtel.png',
+    'photo':'assets/camtelo.png',
     'forfait':'Blue One ',
     'quantite':'2.000F 15min+100SMS /7jours',
     'code':'*825*5*1*1*2#'
   },
     {
-      'photo':'assets/camtel.png',
+      'photo':'assets/camtelo.png',
       'forfait':'Blue One ',
       'quantite':'3.000F 30min+200SMS /30jours',
       'code':'*825*5*1*1*3#'
     },
     {
-      'photo':'assets/camtel.png',
+      'photo':'assets/camtelo.png',
       'forfait':'Blue One ',
       'quantite':'5.000F 45min+300SMS /30jours',
       'code':'*825*5*1*1*4#'
     },
     {
-      'photo':'assets/camtel.png',
+      'photo':'assets/camtelo.png',
       'forfait':'Blue One ',
       'quantite':'   10.000F 60min+400SMS \npendant 30 jours',
       'code':'*825*5*1*1*5#'
     },
     {
-      'photo':'assets/camtel.png',
+      'photo':'assets/camtelo.png',
       'forfait':'Blue One ',
       'quantite':'   20.000F 75min+500SMS \npendant 30 jours',
       'code':'*825*5*1*1*6#'
     },
     {
-      'photo':'assets/camtel.png',
+      'photo':'assets/camtelo.png',
       'forfait':'Blue One ',
       'quantite':'250F 5Go/24H(00H-06H)',
       'code':'*825*5*1*1*15#'
     },
     {
-      'photo':'assets/camtel.png',
-      'forfait':'Appel illimite ',
-      'quantite':'2.000F illimite pendant 30 jours',
+      'photo':'assets/camtelo.png',
+      'forfait':'Appel illimité ',
+      'quantite':'2.000F illimité pendant 30 jours',
       'code':'*825*5*1*3*17#'
     },
 
