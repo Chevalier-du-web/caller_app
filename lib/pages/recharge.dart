@@ -27,7 +27,7 @@ class _RechargePageState extends State<RechargePage> {
                   color: Colors.transparent,
                   border: Border.all(color: Colors.grey)
                 ),
-                  child: Text('Quel forfait desirez-vous ?',
+                  child: Text('Quelle recharge desirez-vous ?',
                   style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),)),
             SizedBox(height: 70,),
             Center(
@@ -48,8 +48,8 @@ class _RechargePageState extends State<RechargePage> {
                         child:
                         Padding(
                           padding: EdgeInsets.fromLTRB(35, 15, 35, 15),
-                          child: Text('Recharge credit',style: TextStyle(
-                              fontSize: 18,color: Colors.white
+                          child: Text('Recharge de credit',style: TextStyle(
+                              fontSize: 15,color: Colors.white
 
                           ),),
                         ),),
@@ -79,7 +79,7 @@ class _RechargePageState extends State<RechargePage> {
                         Padding(
                           padding: EdgeInsets.fromLTRB(35, 15, 35, 15),
                           child: Text('Recharge internet',style: TextStyle(
-                              fontSize: 18,color: Colors.white
+                              fontSize: 15,color: Colors.white
 
                           ),),
                         ),),

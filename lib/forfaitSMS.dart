@@ -19,44 +19,44 @@ class _ForfaitSMSState extends State<ForfaitSMS> {
     {
       'photo':'assets/logo-orange.jpg',
       'forfait':'SMS semaine',
-      'quantite':'255F sms illimite',
+      'quantite':'255F sms illimité',
       'code':'#131*1*2#'
     },
     {
       'photo':'assets/logo-orange.jpg',
       'forfait':'SMS mois',
-      'quantite':'459F sms illimite',
+      'quantite':'459F sms illimité',
       'code':'#131*1*3#'
     },];
   var mtn = [ {
     'photo':'assets/MTN-Logo.png',
     'forfait':'SMS jour',
-    'quantite':'20F SMS illimite ',
-    'code':'*8123*5*1*1#'
+    'quantite':'20F SMS illimité ',
+    'code':'*123*5*1*1#'
   },
     {
       'photo':'assets/MTN-Logo.png',
       'forfait':'SMS jour',
-      'quantite':'50F SMS illimite +50Mo',
-      'code':'*8123*5*1*3#'
+      'quantite':'50F SMS illimité +50Mo',
+      'code':'*123*5*1*3#'
     },
     {
       'photo':'assets/MTN-Logo.png',
       'forfait':'SMS semaine',
-      'quantite':'250F SMS illimite \n+100Mo Whatsapp ',
-      'code':'*8123*5*1*4#'
+      'quantite':'250F SMS illimité \n+100Mo Whatsapp ',
+      'code':'*123*5*1*4#'
     },
     {
       'photo':'assets/MTN-Logo.png',
       'forfait':'SMS mois',
       'quantite':'750F SMS illimite \n+300Mo Whatsapp ',
-      'code':'*8123*5*1*5#'
+      'code':'*123*5*1*5#'
     },
     {
       'photo':'assets/MTN-Logo.png',
       'forfait':'SMS mois',
-      'quantite':'500F SMS illimite ',
-      'code':'*8123*5*1*2#'
+      'quantite':'500F SMS illimité ',
+      'code':'*123*5*1*2#'
     },
 
   ];
@@ -101,19 +101,19 @@ class _ForfaitSMSState extends State<ForfaitSMS> {
     {
       'photo':'assets/Nexttel-Cameroon-Logo.png',
       'forfait':'Bundle SMS jour',
-      'quantite':'100F SMS illimite ',
+      'quantite':'100F SMS illimité ',
       'code':'*860#'
     },
     {
       'photo':'assets/Nexttel-Cameroon-Logo.png',
       'forfait':'Bundle SMS semaine',
-      'quantite':'200F SMS illimite ',
+      'quantite':'200F SMS illimité ',
       'code':'*860#'
     },
     {
       'photo':'assets/Nexttel-Cameroon-Logo.png',
       'forfait':'Bundle SMS mois',
-      'quantite':'400F SMS illimite ',
+      'quantite':'400F SMS illimité ',
       'code':'*860#'
     },
   ];

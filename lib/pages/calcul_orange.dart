@@ -64,7 +64,7 @@ class _CalculOrangeState extends State<CalculOrange> {
                 ),
               ),
               SizedBox(height: 30,),
-              Text('Frais de retrait ',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15)),
+              Text('Frais de retrait d\'argent',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15)),
               Container(
                 padding: EdgeInsets.all(20),
                 decoration: BoxDecoration(

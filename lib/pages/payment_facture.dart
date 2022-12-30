@@ -90,7 +90,7 @@ class _PaymentFactureState extends State<PaymentFacture> {
                             ),
                           ),
                           SizedBox(width: 4,),
-                          Text('ENEO prepaye',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 11,color:Colors.black,),)
+                          Text('ENEO prépayé',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 11,color:Colors.black,),)
                         ],
                       ),
                       Container(

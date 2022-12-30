@@ -38,14 +38,14 @@ class _MonNumeroState extends State<MonNumero> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Mon numero'),
+        title: Text('Mon numéro'),
       ),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
             children: [
               SizedBox(height: 40,),
-              Text('Quel numero voulez-vous avoir ?',
+              Text('Quel numéro voulez-vous avoir ?',
                 style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
               SizedBox(height: 40,),
               GestureDetector(

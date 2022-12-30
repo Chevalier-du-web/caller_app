@@ -60,7 +60,7 @@ class _RetraitArgentState extends State<RetraitArgent> {
                 //numero de telephone ...
                 Container(
                     margin: EdgeInsets.only(right: 20,bottom: 7),
-                    child: Text('      Telephone du beneficiaire',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),)),
+                    child: Text('      Téléphone du bénéficiaire',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),)),
                 Card(
                   child: Container(
                     width: 220,
@@ -74,7 +74,7 @@ class _RetraitArgentState extends State<RetraitArgent> {
                       controller: _phone,
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
-                          hintText: 'Telephone',
+                          hintText: 'Téléphone',
                           focusedBorder: InputBorder.none,
                           border: InputBorder.none,
                         prefixIcon: Icon(Icons.phone)
