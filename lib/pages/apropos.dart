@@ -96,7 +96,7 @@ class Apropos extends StatelessWidget {
                   children: [
                     Text('      Me contacter ?',style: TextStyle(color: Colors.white,
                         fontWeight: FontWeight.bold,fontSize: 17),),
-                    Icon(Icons.whatsapp,color: Colors.green,)
+                    Icon(Icons.chat,color: Colors.green,)
                   ],
                 ),
               ),
