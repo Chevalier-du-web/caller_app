@@ -1,6 +1,7 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:caller/pages/faire_un_don.dart';
+import 'package:caller/pages/historique.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
@@ -24,6 +25,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
   late TabController _controller ;
   dynamic savedThemeMode;
   bool  darkMode = false;
+  int index = 0;
 
   //Et ces fonctions vont permettre l'initialisation et la mise a jour du contoller..
   @override
@@ -65,7 +67,12 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: index==1?
+      AppBar(
+        leading: Icon(Icons.history),
+        title: Text("Hisorique"),
+      )
+          :AppBar(
         title:  Text('Bienvenue chez Servus'),
         //backgroundColor: darkMode?Colors.deepPurple:Colors.blue,
         actions: [
@@ -140,12 +147,12 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
         ),
         ),
       ),
-      drawer: Drawer(
+      drawer: index==0?Drawer(
         width: 270,
         elevation: 9,
         child: DrawerHome(),
-      ),
-      body: TabBarView(
+      ):null,
+      body: index==0?TabBarView(
         controller: _controller,
         children: [
           RetraitPage(),
@@ -153,18 +160,33 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           ForfaitAppel(),
           ForfaitSMS()
         ],
-      ),
+      ):HistoriquePage(),
+      bottomNavigationBar: NavigationBarTheme(
+        data: NavigationBarThemeData(
+            indicatorColor: Colors.white,
+            backgroundColor:  Colors.teal,
+            labelTextStyle: MaterialStateProperty.all(const TextStyle(fontSize: 14,fontWeight: FontWeight.w500,color: Colors.white))
+        ),
+      child:  NavigationBar(
+        labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
+        selectedIndex: index,
+        animationDuration: const Duration(seconds: 3),
+        onDestinationSelected: (index){
+          setState(() {
+            this.index = index;
+          });
+        },
+        destinations: [
+          NavigationDestination(icon: Icon(Icons.home,
+            color: index==0?Colors.black:Colors.white,), label: 'Accueil',),
+          // NavigationDestination(icon: Icon(Icons.call_end_outlined,
+          //   color: index==1?Colors.black:Colors.white,), label: 'Call Box',),
+          NavigationDestination(icon: Icon(Icons.history,
+            color: index==1?Colors.black:Colors.white,), label: 'Historique'),
 
-      // bottomNavigationBar: AnimatedBottomNavigationBar(
-      //
-      //   backgroundColor: Colors.teal,
-      //   icons: [
-      //     Icons.home_filled,
-      //     Icons.history,
-      //     Icons.card_travel
-      //   ],
-      //   activeIndex: 1,
-      //   onTap: (int ) {  },),
+
+        ],
+      ),),
 
     );
   }
