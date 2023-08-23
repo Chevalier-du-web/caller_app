@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_social_button/flutter_social_button.dart';
+import 'package:social_login_buttons/social_login_buttons.dart';
 import 'package:url_launcher/url_launcher.dart';
 // import 'package:url_launcher/url_launcher.dart';
 
@@ -13,98 +15,137 @@ class Apropos extends StatelessWidget {
         " différents fournisseurs d'accès au cameroun, à savoir :"
         " Orange, MTN, Camtel ,Nexttel .\n\n La version actuelle "
         "se vera changée au fil du temps . Car les forfaits devront être "
-        "mises à jour . \n\n\nN'hésitez pas à nous contacter en cas"
+        "mises à jour . \n\n\nN'hésitez pas à nous soutenir ou nous contacter en cas"
         " de besoin des services et aussi lors de l'utilisation du logiciel. \n\n\n "
         "Merci et bonne utilisation ...." ;
     return Scaffold(
-      appBar: AppBar(
-        title: Text('A propos'),
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-              height: 180,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Colors.blue,
-                borderRadius: BorderRadius.only(bottomRight: Radius.circular(100),bottomLeft: Radius.circular(100))
-              ),
-                child: Column(
-                  children: [
-                    Container(
-                      width: 90,
-                    height: 90,
-                      padding: EdgeInsets.all(10),
-                      margin: EdgeInsets.only(top: 20),
-                      decoration: BoxDecoration(
-                        color: Colors.grey,
-                        borderRadius: BorderRadius.circular(100),
-                          image: DecorationImage(
-                              image: AssetImage('assets/servus.jpg'),
-                              fit: BoxFit.cover
-                          )
-                      ),
-                       ),
-                    SizedBox(height: 8,),
-                    Text('Servus',style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold,color: Colors.white),)
-                  ],
+
+      body:CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            pinned: true,leading: IconButton(onPressed: () { Navigator.pop(context); },
+            icon: Icon(Icons.arrow_back_ios,color: Colors.teal,),),
+            expandedHeight: 220.0,elevation: 12,
+            backgroundColor: Colors.indigo,
+            flexibleSpace: FlexibleSpaceBar(
+              title: const Text('A propos'),
+              background: Container(
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/servus.jpg'),fit: BoxFit.cover
+                  ),
                 ),
-            ),
-            SizedBox(height: 20,),
-            Text('Version 1.0'),
-            Container(
-              margin: EdgeInsets.only(top: 20,left: 40,right: 40),
-              child: Text(apropos),
-            ),
-            SizedBox(height: 9,),
-            Text('Développeur : Sangon Brangon',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
-            SizedBox(height: 9,),
-            Text('brandonsangon5@gmail.com',style: TextStyle(fontSize: 15)),
-            SizedBox(height: 10,),
-            Divider(),
-            Container(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text('Pour vos besoins de :',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
-                  Text('* création d\'applications '),
-                  Text('* création de sites web  '),
-                  Text('* création des logos et flyers')
-                ],
               ),
             ),
-            SizedBox(height: 20,),
-            GestureDetector(
-              onTap: ()async{
-                var message = "Salut Mr Brandon, concepteur de "
-                    "l\'application Servus, je desire entrer en possession de votre produit...";
-                var number = '+237657591936';
-                var url = "whatsapp://send?phone=$number&text=$message";
-                await canLaunch(url)?launch(url):print('erreur de lien');
-              },
-              child: Container(
-                width: 200,
+          ),
+
+          SliverList(
+            delegate: SliverChildListDelegate(
+                [
+              SizedBox(height: 20,),
+              Text('Version 2.0',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),textAlign: TextAlign.center,),
+              Container(
+                margin: EdgeInsets.only(top: 20,left: 40,right: 40),
+                child: Text(apropos,style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+              ),
+              SizedBox(height: 9,),
+              Container(
                 padding: EdgeInsets.all(10),
+                margin: EdgeInsets.only(left: 20,right: 20),
                 decoration: BoxDecoration(
-                  color: Colors.blue,
-                  border: Border.all(color: Colors.grey,width: 0.5),
-                  borderRadius: BorderRadius.circular(10)
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  color: Colors.grey.withOpacity(.2),
+                    borderRadius: BorderRadius.circular(10)),
+                child: Text('Développeur : Sangon Brangon\n '
+                    'Etudiant en 3e année génie logiciel',
+                  style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),textAlign: TextAlign.center,),
+              ),
+              SizedBox(height: 10,),
+              Divider(),
+              Container(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text('      Me contacter ?',style: TextStyle(color: Colors.white,
-                        fontWeight: FontWeight.bold,fontSize: 17),),
-                    Icon(Icons.chat,color: Colors.green,)
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          height: 3,
+                        width: 75,
+                        color: Colors.teal,
+                        margin: EdgeInsets.all(7),),
+                        Text('Pour vos besoins de :',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+                        Container(
+                          height: 3,
+                          width: 75,
+                          color: Colors.teal,
+                          margin: EdgeInsets.all(7),),
+                      ],
+                    ),
+                    Container(
+                      width: 270,
+                      padding: EdgeInsets.all(13),
+                        margin: EdgeInsets.all(4),
+                        decoration: BoxDecoration(
+                          color: Colors.grey.withOpacity(.2),
+                          borderRadius: BorderRadius.circular(10)
+                        ),
+                        child: Row(
+                          children: [
+                            Icon(Icons.android),
+                            Text('   Création d\'applications '),
+                          ],
+                        )),
+                    Container(
+                        width: 270,
+                        margin: EdgeInsets.all(4),
+                        padding: EdgeInsets.all(13),
+                        decoration: BoxDecoration(
+                            color: Colors.grey.withOpacity(.2),
+                            borderRadius: BorderRadius.circular(10)
+                        ),
+                        child: Row(
+                          children: [
+                            Icon(Icons.android),
+                            Text('   Création de sites web '),
+                          ],
+                        )),
+
+                    Container(
+                        width: 270,
+                        margin: EdgeInsets.all(4),
+                        padding: EdgeInsets.all(13),
+                        decoration: BoxDecoration(
+                            color: Colors.grey.withOpacity(.2),
+                            borderRadius: BorderRadius.circular(10)
+                        ),
+                        child: Row(
+                          children: [
+                            Icon(Icons.android),
+                            Text('   Création des logos et flyers '),
+                          ],
+                        )),
                   ],
                 ),
               ),
-            ),
-            SizedBox(height: 50,)
-          ],
-        ),
-      ),
+
+              SizedBox(height: 10,),
+                  FlutterSocialButton(
+                    onTap: ()async{
+                      var message = "Salut Mr Brandon, concepteur de "
+                          "l\'application Servus, je desire entrer en possession de votre produit...";
+                      var number = '+237657591936';
+                      var url = "whatsapp://send?phone=$number&text=$message";
+                      await canLaunch(url)?launch(url):print('erreur de lien');
+                    },
+                    title: "Me contacter",
+                    buttonType: ButtonType.whatsapp,
+                  ),
+            ]),
+          )
+
+        ],
+      )
     );
   }
 }
+

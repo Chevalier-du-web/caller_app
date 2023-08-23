@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
 
+import '../components/custom_card.dart';
+
 class PaymentFacture extends StatefulWidget {
   const PaymentFacture({Key? key}) : super(key: key);
 
@@ -38,7 +40,7 @@ class _PaymentFactureState extends State<PaymentFacture> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Facture'),
+        title: Text('Paiement de facture'),
       ),
 
       body: SingleChildScrollView(
@@ -47,188 +49,26 @@ class _PaymentFactureState extends State<PaymentFacture> {
             children: [
               SizedBox(height: 40,),
               Container(
-                  padding: EdgeInsets.all(15),
+                  padding: EdgeInsets.all(17),
                   decoration: BoxDecoration(
                       color: Colors.transparent,
-                      border: Border.all(color: Colors.grey)
+                      border: Border.all(color: Colors.grey),
+                    borderRadius: BorderRadius.circular(10)
                   ),
                   child: Text('Choix de la facture',
                     style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),)),
               SizedBox(height: 40,),
-              GestureDetector(
-                onTap: ()=>ChoixReseaux('eneo'),
-                child: Container(
-                  width: 230,
-                  padding: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                            color: Colors.blueGrey.withOpacity(.4),
-                            offset: Offset(0,3),
-                            blurRadius: 3,
-                            spreadRadius: 1
-                        ),
-                      ],
-                      border: Border.all(color: Colors.grey)
-                  ),
-                  child:Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          SizedBox(width: 5,),
-                          Container(
-                              width: 80,
-                              height: 40,
-                            decoration: BoxDecoration(
-                                color: Colors.transparent,
-                                image: DecorationImage(
-                                    image: AssetImage('assets/eneo.jpg'),
-                                    fit: BoxFit.cover
-                                )
-                            ),
-                          ),
-                          SizedBox(width: 4,),
-                          Text('ENEO prépayé',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 11,color:Colors.black,),)
-                        ],
-                      ),
-                      Container(
-                          margin: EdgeInsets.only(right: 10),
-                          child: Icon(Icons.call,color:Colors.black))
-                    ],
-                  ),
-                ),
-              ),
+              CustomCard(onpressed: ()=>ChoixReseaux('ENEO prépayé'), image: 'assets/eneo.jpg', title: 'Eneo', type: 0,),
+
               SizedBox(height: 12,),
-              GestureDetector(
-                onTap:()=>ChoixReseaux('camwater'),
-                child: Container(
-                  width: 230,
-                  padding: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                            color: Colors.blueGrey.withOpacity(.4),
-                            offset: Offset(0,3),
-                            blurRadius: 3,
-                            spreadRadius: 1
-                        ),
-                      ],
-                      border: Border.all(color: Colors.grey)
-                  ),
-                  child:Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          SizedBox(width: 5,),
-                          Container(
-                              width: 80,
-                              height: 40,
-                            decoration: BoxDecoration(
-                                color: Colors.transparent,
-                                image: DecorationImage(
-                                    image: AssetImage('assets/cam_water.jpg'),
-                                    fit: BoxFit.cover
-                                )
-                            ),
-                          ),
-                          SizedBox(width: 5,),
-                          Text('CAMWATER',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 11,color:Colors.black),)
-                        ],
-                      ),
-                      Container(
-                          margin: EdgeInsets.only(right: 10),
-                          child: Icon(Icons.call,color:Colors.black))
-                    ],
-                  ),
-                ),
-              ),
+              CustomCard(onpressed: ()=>ChoixReseaux('camwater'), image: 'assets/cam_water.jpg', title: 'CAMWATER', type: 0,),
+
               SizedBox(height: 12,),
-              GestureDetector(
-                onTap: ()=>ChoixReseaux('impots'),
-                child: Container(
-                  width: 230,
-                  padding: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                            color: Colors.blueGrey.withOpacity(.4),
-                            offset: Offset(0,3),
-                            blurRadius: 3,
-                            spreadRadius: 1
-                        ),
-                      ],
-                      border: Border.all(color: Colors.grey)
-                  ),
-                  child:Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          SizedBox(width: 5,),
-                          Container(
-                              width: 40,
-                              height: 40,
-                              child: Image.asset('assets/impot.png',fit: BoxFit.cover,)
-                          ),
-                          SizedBox(width: 8,),
-                          Text('IMPOTS',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 11,color:Colors.black),)
-                        ],
-                      ),
-                      Container(
-                          margin: EdgeInsets.only(right: 10),
-                          child: Icon(Icons.call,color:Colors.black))
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(height: 12,),
-              GestureDetector(
-                onTap: ()=>ChoixReseaux('canal'),
-                child: Container(
-                  width: 230,
-                  padding: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                            color: Colors.blueGrey.withOpacity(.4),
-                            offset: Offset(0,3),
-                            blurRadius: 3,
-                            spreadRadius: 1
-                        ),
-                      ],
-                      border: Border.all(color: Colors.grey)
-                  ),
-                  child:Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          SizedBox(width: 5,),
-                          Container(
-                              width: 40,
-                              height: 40,
-                              child: Image.asset('assets/canalplus.png',fit: BoxFit.cover,)
-                          ),
-                          SizedBox(width: 8,),
-                          Text('CANAL+',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 12,color:Colors.black),)
-                        ],
-                      ),
-                      Container(
-                          margin: EdgeInsets.only(right: 10),
-                          child: Icon(Icons.call,color:Colors.black))
-                    ],
-                  ),
-                ),
-              ),
+              CustomCard(onpressed: ()=>ChoixReseaux('impots'), image: 'assets/impot.png', title: 'IMPOTS', type: 0,),
 
 
-
+              SizedBox(height: 12,),
+              CustomCard(onpressed: ()=>ChoixReseaux('canal'), image: 'assets/canalplus.png', title: 'CANAL+', type: 0,),
 
             ],
           ),
@@ -238,15 +78,26 @@ class _PaymentFactureState extends State<PaymentFacture> {
   }
 
   Future ChoixReseaux(String type){
-    return showModalBottomSheet(context: context, builder: (BuildContext context){
+    return showModalBottomSheet(
+        context: context,
+        elevation: 9,
+        isDismissible: true,
+        showDragHandle: true,
+        enableDrag: true,
+        shape:RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(topRight: Radius.circular(50),
+                topLeft:  Radius.circular(50))),
+        builder: (BuildContext context){
       return Container(
-        height: 200,
+        height: 220,
         child: Column(
           children: [
-            SizedBox(height: 10,),
-            Text('Payez avec  ',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),)
-            //paiement orange ...
-            ,GestureDetector(
+            SizedBox(height: 5,),
+            Text('Payez avec  ',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+          SizedBox(height: 7),
+
+          //paiement orange ...
+            InkWell(
               onTap: ()async{
 
                 Navigator.pop(context);
@@ -262,7 +113,9 @@ class _PaymentFactureState extends State<PaymentFacture> {
                 padding: EdgeInsets.all(5),
                 decoration: BoxDecoration(
                     color: Colors.transparent,
-                    border: Border.all(color:Colors.grey)
+                    border: Border.all(color:Colors.grey),
+                    borderRadius: BorderRadius.circular(10)
+
                 ),
                 child: Row(
                   children: [
@@ -288,7 +141,7 @@ class _PaymentFactureState extends State<PaymentFacture> {
               ),
             ),
             //paiement Mtn
-            GestureDetector(
+            InkWell(
               onTap: ()async{
 
                 Navigator.pop(context);
@@ -305,7 +158,8 @@ class _PaymentFactureState extends State<PaymentFacture> {
                 padding: EdgeInsets.all(5),
                 decoration: BoxDecoration(
                     color: Colors.transparent,
-                    border: Border.all(color:Colors.grey)
+                    border: Border.all(color:Colors.grey),
+                    borderRadius: BorderRadius.circular(10)
                 ),
                 child: Row(
                   children: [

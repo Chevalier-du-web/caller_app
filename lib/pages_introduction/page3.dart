@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../components/transition.dart';
 import '../homepage.dart';
-import '../transition.dart';
 
 class Page3 extends StatelessWidget {
   const Page3({Key? key}) : super(key: key);

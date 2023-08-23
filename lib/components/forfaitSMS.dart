@@ -131,6 +131,7 @@ class _ForfaitSMSState extends State<ForfaitSMS> {
     super.initState();
     ForfaitsSMS = orange;
   }
+  int current = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -149,7 +150,7 @@ class _ForfaitSMSState extends State<ForfaitSMS> {
                     itemBuilder: (context,index){
                       return Container(
                         decoration: BoxDecoration(
-                            color: Colors.grey.withOpacity(.3),
+                            color: current==index? Colors.teal.withOpacity(.3) : Colors.grey.withOpacity(.3),
                             borderRadius: BorderRadius.circular(90)
                         ),
                         margin: EdgeInsets.all(2),

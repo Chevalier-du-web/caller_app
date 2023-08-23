@@ -321,6 +321,7 @@ class _ForfaitAppelState extends State<ForfaitAppel> {
     super.initState();
     ForfaitsAppel = orange;
   }
+  int current = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -339,7 +340,7 @@ class _ForfaitAppelState extends State<ForfaitAppel> {
                     itemBuilder: (context,index){
                       return Container(
                         decoration: BoxDecoration(
-                            color: Colors.grey.withOpacity(.3),
+                            color: current==index? Colors.teal.withOpacity(.3) : Colors.grey.withOpacity(.3),
                             borderRadius: BorderRadius.circular(90)
                         ),
                         margin: EdgeInsets.all(2),

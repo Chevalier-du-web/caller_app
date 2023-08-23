@@ -31,11 +31,11 @@ class _MyAppState extends State<MyApp> {
     return AdaptiveTheme(
       light: ThemeData(
           brightness: Brightness.light,
-          primarySwatch: Colors.blue
+          primarySwatch: Colors.teal
       ),
       dark: ThemeData(
           brightness: Brightness.dark,
-          primarySwatch: Colors.blue
+          primarySwatch: Colors.teal
       ),
       initial: AdaptiveThemeMode.light,
       builder: (theme, Darktheme)=>MaterialApp(

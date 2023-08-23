@@ -1,5 +1,8 @@
+import 'package:caller/components/button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+
+import '../components/header_title.dart';
 
 
 class RechargePage extends StatefulWidget {
@@ -18,77 +21,27 @@ class _RechargePageState extends State<RechargePage> {
       ),
 
       body: SingleChildScrollView(
+        physics: AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
         child: Column(
           children: [
             SizedBox(height: 60,),
               Container(
-                padding: EdgeInsets.all(15),
+                padding: EdgeInsets.all(17),
                 decoration: BoxDecoration(
                   color: Colors.transparent,
-                  border: Border.all(color: Colors.grey)
+                  border: Border.all(color: Colors.grey),
+                  borderRadius: BorderRadius.circular(10)
                 ),
                   child: Text('Quelle recharge desirez-vous ?',
-                  style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),)),
+                  style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)),
             SizedBox(height: 70,),
-            Center(
-              child: Container(
-                width: 250,
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: ElevatedButton(onPressed: ()=>ChoixReseaux('credit'),
-                        style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all(Colors.blue),
-                            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10)
-                                )
-                            )
-                        ),
-                        child:
-                        Padding(
-                          padding: EdgeInsets.fromLTRB(35, 15, 35, 15),
-                          child: Text('Recharge de credit',style: TextStyle(
-                              fontSize: 15,color: Colors.white
+            CustomButton(onpressed: ()=>ChoixReseaux('credit'), title: 'Recharge de credit'),
 
-                          ),),
-                        ),),
-
-                    )
-                  ],
-                ),
-              ),
-            ),
             SizedBox(height: 30,),
-            Center(
-              child: Container(
-                width: 250,
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: ElevatedButton(onPressed: ()=>ChoixReseaux('internet'),
-                        style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all(Colors.blue),
-                            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10)
-                                )
-                            )
-                        ),
-                        child:
-                        Padding(
-                          padding: EdgeInsets.fromLTRB(35, 15, 35, 15),
-                          child: Text('Recharge internet',style: TextStyle(
-                              fontSize: 15,color: Colors.white
+            CustomButton(onpressed: ()=>ChoixReseaux('internet'), title: 'Recharge internet'),
+            SizedBox(height: 190,)
 
-                          ),),
-                        ),),
 
-                    )
-                  ],
-                ),
-              ),
-            )
           ],
         ),
       ),
@@ -96,14 +49,25 @@ class _RechargePageState extends State<RechargePage> {
   }
 
   Future ChoixReseaux(String type){
-    return showModalBottomSheet(context: context, builder: (BuildContext context){
+    return showModalBottomSheet(
+        context: context,
+        elevation: 9,
+        isDismissible: true,
+        showDragHandle: true,
+        enableDrag: true,
+        shape:RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+                topRight: Radius.circular(50),
+                topLeft:  Radius.circular(50))),
+        builder: (BuildContext context){
       return Container(
         height: 200,
         child: Column(
           children: [
-            SizedBox(height: 10,),
             SizedBox(height: 5,),
             Text('Rechargez avec  ',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+            SizedBox(height: 7,),
+
             GestureDetector(
               onTap: ()async{
                 print(type);
@@ -119,7 +83,9 @@ class _RechargePageState extends State<RechargePage> {
                 padding: EdgeInsets.all(5),
                 decoration: BoxDecoration(
                     color: Colors.transparent,
-                    border: Border.all(color:Colors.grey)
+                    border: Border.all(color:Colors.grey),
+                    borderRadius: BorderRadius.circular(10)
+
                 ),
                 child: Row(
                   children: [
@@ -159,7 +125,9 @@ class _RechargePageState extends State<RechargePage> {
                 padding: EdgeInsets.all(5),
                 decoration: BoxDecoration(
                     color: Colors.transparent,
-                    border: Border.all(color:Colors.grey)
+                    border: Border.all(color:Colors.grey),
+                    borderRadius: BorderRadius.circular(10)
+
                 ),
                 child: Row(
                   children: [

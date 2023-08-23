@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-
 import '../homepage.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../pages_introduction/page1.dart';
 import '../pages_introduction/page2.dart';
 import '../pages_introduction/page3.dart';

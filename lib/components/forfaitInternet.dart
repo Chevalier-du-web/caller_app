@@ -737,6 +737,7 @@ class _ForfaitInternetState extends State<ForfaitInternet> {
     ForfaitsInternets = orange;
   }
   int selectedNetwork = 0;
+  int current = 0;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -754,7 +755,7 @@ class _ForfaitInternetState extends State<ForfaitInternet> {
                   itemBuilder: (context,index){
                 return Container(
                   decoration: BoxDecoration(
-                    color: Colors.grey.withOpacity(.3),
+                    color: current==index? Colors.teal.withOpacity(.3) : Colors.grey.withOpacity(.3),
                     borderRadius: BorderRadius.circular(90)
                   ),
                   margin: EdgeInsets.all(2),
@@ -765,10 +766,11 @@ class _ForfaitInternetState extends State<ForfaitInternet> {
                             :index==1?ForfaitsInternets = mtn
                             :index ==2 ? ForfaitsInternets = camtel
                             :ForfaitsInternets = nexttel;
+                        current= index;
                       });
                     },
                     child: Container(
-                      margin: EdgeInsets.all(5),
+                      margin: EdgeInsets.all(8),
                       height: 50,
                       width: 60,
                       decoration: BoxDecoration(
