@@ -99,7 +99,6 @@ class _DrawerHomeState extends State<DrawerHome> {
                 ListWidget(
                   title: 'Paiement factures',
                   onPressed: () {
-                    Navigator.pop(context);
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>PaymentFacture()));
                   },
                   icon: Icon(Icons.monetization_on,
@@ -108,7 +107,6 @@ class _DrawerHomeState extends State<DrawerHome> {
                 ListWidget(
                   title: 'Soldes principaux',
                   onPressed: () {
-                    Navigator.pop(context);
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>SoldConsult()));
                   },
                   icon: Icon(Icons.money_rounded,
@@ -117,7 +115,6 @@ class _DrawerHomeState extends State<DrawerHome> {
                 ListWidget(
                   title: 'Mon numéro',
                   onPressed: () {
-                    Navigator.pop(context);
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>MonNumero()));
                   },
                   icon: Icon(Icons.phone,
@@ -126,7 +123,6 @@ class _DrawerHomeState extends State<DrawerHome> {
                 ListWidget(
                   title: 'Recharge',
                   onPressed: () {
-                    Navigator.pop(context);
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>RechargePage()));
                   },
                   icon: Icon(Icons.help,
@@ -135,7 +131,6 @@ class _DrawerHomeState extends State<DrawerHome> {
                 ListWidget(
                   title: 'Composer un code',
                   onPressed: () {
-                    Navigator.pop(context);
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>Composer()));
                   },
                   icon: Icon(Icons.add_call,
@@ -144,7 +139,6 @@ class _DrawerHomeState extends State<DrawerHome> {
                 ListWidget(
                   title: 'Calculateur de tarif',
                   onPressed: () {
-                    Navigator.pop(context);
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>CalculTarif()));
                   },
                   icon: Icon(Icons.calculate_rounded,
@@ -154,7 +148,6 @@ class _DrawerHomeState extends State<DrawerHome> {
                 ListWidget(
                   title: 'A propos',
                   onPressed: () {
-                    Navigator.pop(context);
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>Apropos()));
                   },
                   icon: Icon(Icons.help,
