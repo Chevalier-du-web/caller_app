@@ -29,13 +29,13 @@ class _RetraitPageState extends State<RetraitPage> {
 
          HeaderTitle(),
 
-          SizedBox(height: 20,),
+          SizedBox(height: 10,),
           CustomButton(onpressed: ()=>ChoixReseaux('retrait'), title: 'Retrait d\'argent',),
-          SizedBox(height: 20,),
+          SizedBox(height: 10,),
           CustomButton(onpressed: ()=>ChoixReseaux('transfert'), title: 'Transfert d\'argent',),
-          SizedBox(height: 20,),
-          CustomButton(onpressed: ()=>ChoixReseaux('callbox'), title: 'CallBox',),
-          SizedBox(height: 20,),
+          SizedBox(height: 10,),
+          CustomButton(onpressed: ()=>ChoixReseaux('callbox'), title: 'CallBox (transfert de credit)   ',),
+          SizedBox(height: 10,),
           CustomButton(onpressed: ()=>ChoixReseaux('tarifs'), title: 'Tarification',),
 
 
@@ -46,15 +46,17 @@ class _RetraitPageState extends State<RetraitPage> {
   }
   Future ChoixReseaux(String type){
     return showModalBottomSheet(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(50),
+              topRight: Radius.circular(50)),
+        ),
         context: context,
-        elevation: 9,
-        isDismissible: true,
+        isScrollControlled: true,
         showDragHandle: true,
-        enableDrag: true,
-        shape:RoundedRectangleBorder(borderRadius: BorderRadius.only(topRight: Radius.circular(50),topLeft:  Radius.circular(50))),
         builder: (BuildContext context){
       return Container(
-        height: 220,
+        height: type=='callbox'?MediaQuery.of(context).size.height-280:220,
         decoration: BoxDecoration(
           color: Colors.transparent,
           borderRadius: BorderRadius.only(topRight: Radius.circular(40))
@@ -118,8 +120,6 @@ class _RetraitPageState extends State<RetraitPage> {
                 :type =='callbox'?
                 Navigator.push(context, MaterialPageRoute(builder: (context)=>CallBoxPage(type: 1 )))
                     : Navigator.push(context, MaterialPageRoute(builder: (context)=>TarifsMTN()));
-
-
               },
               child: Container(
                 margin: EdgeInsets.all(10),
@@ -152,7 +152,96 @@ class _RetraitPageState extends State<RetraitPage> {
                   ],
                 ),
               ),
-            )
+            ),
+            // Camtel
+            type =='callbox'?InkWell(
+              onTap: (){
+                Navigator.pop(context);
+                type =='retrait'?
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>RetraitArgent(type: 1,)))
+                    : type =='transfert'?
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>TransfertArgent(type: 1,)))
+                    : type =='callbox'?
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>CallBoxPage(type: 2)))
+                    :Navigator.push(context, MaterialPageRoute(builder: (context)=>TarifsOrange()));
+
+              },
+              child: Container(
+                margin: EdgeInsets.all(10),
+                padding: EdgeInsets.all(5),
+                decoration: BoxDecoration(
+                    color: Colors.transparent,
+                    border: Border.all(color:Colors.grey),
+                    borderRadius: BorderRadius.circular(10)
+                ),
+                child: Row(
+                  children: [
+                    SizedBox(width: 9,),
+                    Container(
+                      height: 45,
+                      width: 45,
+                      decoration: BoxDecoration(
+                          color: Colors.yellow,
+                          borderRadius: BorderRadius.circular(150),
+                          image: DecorationImage(
+                              image: AssetImage('assets/camtel_logo.jpg'),
+                              fit: BoxFit.cover
+                          )
+                      ),
+                    ),
+                    SizedBox(width: 25,),
+                    Text("Camtel",style: TextStyle(
+                        fontSize: 17,fontWeight: FontWeight.bold
+                    ),)
+                  ],
+                ),
+              ),
+            ):Container(),
+
+            // Nexttel
+            type =='callbox'?InkWell(
+              onTap: (){
+                Navigator.pop(context);
+                type =='retrait'?
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>RetraitArgent(type: 1,)))
+                    : type =='transfert'?
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>TransfertArgent(type: 1,)))
+                    : type =='callbox'?
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>CallBoxPage(type: 3)))
+                    :Navigator.push(context, MaterialPageRoute(builder: (context)=>TarifsOrange()));
+
+              },
+              child: Container(
+                margin: EdgeInsets.all(10),
+                padding: EdgeInsets.all(5),
+                decoration: BoxDecoration(
+                    color: Colors.transparent,
+                    border: Border.all(color:Colors.grey),
+                    borderRadius: BorderRadius.circular(10)
+                ),
+                child: Row(
+                  children: [
+                    SizedBox(width: 9,),
+                    Container(
+                      height: 45,
+                      width: 45,
+                      decoration: BoxDecoration(
+                          color: Colors.yellow,
+                          borderRadius: BorderRadius.circular(150),
+                          image: DecorationImage(
+                              image: AssetImage('assets/Nexttel-Cameroon-Logo.png'),
+                              fit: BoxFit.cover
+                          )
+                      ),
+                    ),
+                    SizedBox(width: 25,),
+                    Text("Nexttel",style: TextStyle(
+                        fontSize: 17,fontWeight: FontWeight.bold
+                    ),)
+                  ],
+                ),
+              ),
+            ):Container(),
           ],
         ),
       );

@@ -4,7 +4,7 @@ import 'package:caller/pages/faire_un_don.dart';
 import 'package:caller/pages/historique.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-
+import 'dart:io';
 import 'package:adaptive_theme/adaptive_theme.dart';
 
 import 'components/drawerHome.dart';
@@ -68,11 +68,21 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: index==1?
-      AppBar(
-        leading: Icon(Icons.history),
-        title: Text("Hisorique"),
-      )
+      null
           :AppBar(
+        leading: Container(
+          width: 35,
+          height: 35,
+          margin: EdgeInsets.all(4),
+          decoration: BoxDecoration(
+            color: Colors.transparent,
+            borderRadius: BorderRadius.circular(50),
+            image: DecorationImage(
+              image: AssetImage("assets/calling.gif"),
+              fit: BoxFit.cover
+            )
+          ),
+        ),
         title:  Text('Bienvenue chez Servus'),
         //backgroundColor: darkMode?Colors.deepPurple:Colors.blue,
         actions: [
@@ -105,13 +115,19 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                   child: Row(
                     children: [
                       Container(
+                          width: 40,
+                          height: 40,
                         padding: EdgeInsets.all(6),
                           margin: EdgeInsets.only(right: 10),
                           decoration: BoxDecoration(
                             color: Colors.white.withOpacity(.2),
-                            borderRadius: BorderRadius.circular(50)
-                          ),
-                          child: Icon(Icons.attach_money,color: Colors.white,)),
+                            borderRadius: BorderRadius.circular(50),
+                            image: DecorationImage(
+                              image: AssetImage("assets/don.gif"),
+
+                            )
+                          ),),
+
                       AnimatedTextKit(
                         repeatForever: true,
                         animatedTexts: [
@@ -160,7 +176,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           ForfaitAppel(),
           ForfaitSMS()
         ],
-      ):HistoriquePage(),
+      ):DrawerHome(),
       bottomNavigationBar: NavigationBarTheme(
         data: NavigationBarThemeData(
             indicatorColor: Colors.white,
@@ -181,9 +197,8 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
             color: index==0?Colors.black:Colors.white,), label: 'Accueil',),
           // NavigationDestination(icon: Icon(Icons.call_end_outlined,
           //   color: index==1?Colors.black:Colors.white,), label: 'Call Box',),
-          NavigationDestination(icon: Icon(Icons.history,
-            color: index==1?Colors.black:Colors.white,), label: 'Historique'),
-
+          NavigationDestination(icon: Icon(Icons.menu_rounded,
+            color: index==1?Colors.black:Colors.white,), label: 'Options'),
 
         ],
       ),),

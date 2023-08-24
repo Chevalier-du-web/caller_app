@@ -20,22 +20,29 @@ class _ListWidgetState extends State<ListWidget> {
 
         decoration: BoxDecoration(
           color: Colors.grey.withOpacity(.2),
-          borderRadius: BorderRadius.circular(20)
+          borderRadius: BorderRadius.circular(10)
         ),
         margin: EdgeInsets.only(left: 15,right: 15,top: 10),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Container(
-              padding: EdgeInsets.all(5),
-              margin: EdgeInsets.only(left: 20),
-              decoration: BoxDecoration(
-                color: Colors.grey.withOpacity(.2),
-                borderRadius: BorderRadius.circular(70)
-              ),
-                child: widget.icon),
-            SizedBox(width: 20,),
-            Text(widget.title,style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),)
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                    padding: EdgeInsets.all(7),
+                    margin: EdgeInsets.only(left: 20),
+                    decoration: BoxDecoration(
+                        color: Colors.grey.withOpacity(.2),
+                        borderRadius: BorderRadius.circular(70)
+                    ),
+                    child: widget.icon),
+                SizedBox(width: 20,),
+                Text(widget.title,style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+              ],
+            ),
+
+            Icon(Icons.arrow_forward_ios_outlined)
           ],
         ),
       ),

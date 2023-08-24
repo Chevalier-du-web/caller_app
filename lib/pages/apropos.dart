@@ -23,10 +23,11 @@ class Apropos extends StatelessWidget {
       body:CustomScrollView(
         slivers: [
           SliverAppBar(
-            pinned: true,leading: IconButton(onPressed: () { Navigator.pop(context); },
-            icon: Icon(Icons.arrow_back_ios,color: Colors.teal,),),
+            pinned: true,
+            leading: IconButton(onPressed: () { Navigator.pop(context); },
+            icon: Icon(Icons.arrow_back_ios,color: Colors.white,),),
             expandedHeight: 220.0,elevation: 12,
-            backgroundColor: Colors.indigo,
+            backgroundColor: Colors.teal,
             flexibleSpace: FlexibleSpaceBar(
               title: const Text('A propos'),
               background: Container(

@@ -1,3 +1,5 @@
+import 'dart:convert';
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -10,13 +12,15 @@ class HistoriquePage extends StatefulWidget {
 }
 
 class _HistoriquePageState extends State<HistoriquePage> {
+  var valeur;
   @override
-  void initState()async {
+  void initState() {
     // TODO: implement initState
     super.initState();
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-
+    valeur = getTransaction();
   }
+
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -55,12 +59,23 @@ class _HistoriquePageState extends State<HistoriquePage> {
                   children: [
                     Text('Forfait internet : 23 janvier 2023',
                       style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
-                    Text('Forfait jour'),
+                    Text('Forfait jour $valeur'),
 
                   ],
                 ),
                 InkWell(
                   onTap: (){
+                    // final myText = 'Hello, world!';
+                    //
+                    // final file = File('../transactions.txt');
+                    // file.writeAsString(myText);
+                    print("reussi insert");
+
+                    var tt=getTransaction().then((value)  {
+                      var jsonData = jsonDecode(value);
+                      print("type de donnees :");
+                      print(jsonData.runtimeType);
+                    });
 
                   },
                   child: Column(
@@ -75,5 +90,12 @@ class _HistoriquePageState extends State<HistoriquePage> {
             )),
       );
     });
+  }
+
+
+  Future getTransaction()async{
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    return jsonDecode(prefs.getString("transaction") ?? "") ?? {};
+
   }
 }

@@ -91,35 +91,8 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-     - assets/camtel_logo.jpg
-     - assets/logo-orange.jpg
-     - assets/servus.jpg
-     - assets/MTN-Logo.png
-     - assets/Nexttel-Cameroon-Logo.png
-     - assets/eneo.jpg
-     - assets/impot.png
-     - assets/canalplus.png
-     - assets/cam_water.jpg
-     - assets/orangemoney.jpg
-     - assets/image1.png
-     - assets/image2.png
-     - assets/camtelo.png
-     - assets/home.png
-     - assets/profil.png
-     - assets/image3.png
-     - assets/mtnmoney.jpg
-     - assets/camtel.png
-     - assets/paiementorange.PNG
-     - assets/orangegimac.PNG
-     - assets/orange_tarifs.PNG
-     - assets/orange-tarif.PNG
-     - assets/mtntransf.PNG
-     - assets/mtntarrcopie.png
-     - assets/mtnretrai.PNG
-     - assets/mtnenvois.PNG
-     - assets/mtn.PNG
-     - assets/eneoprepayorange.PNG
-     - assets/eneoorange.PNG
+     - assets/
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

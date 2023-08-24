@@ -53,6 +53,7 @@ class _DrawerHomeState extends State<DrawerHome> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      physics: AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
       child: Column(
         children: [
           Container(

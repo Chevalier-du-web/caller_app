@@ -1,5 +1,8 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 
 class CardForfait extends StatelessWidget {
@@ -45,10 +48,22 @@ class CardForfait extends StatelessWidget {
           IconButton(onPressed: ()async{
             //lancement de l'appel
             await FlutterPhoneDirectCaller.callNumber(code);
+            setTransaction();
+            print("reussi");
           },
               icon: Icon(Icons.call,color: Colors.blue,))
         ],
       ),
     );
+  }
+  Future  setTransaction()async{
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.setString(
+        "transaction",
+        jsonEncode({
+          "name": "brandon",
+          "age":"25"
+        }));
+
   }
 }
