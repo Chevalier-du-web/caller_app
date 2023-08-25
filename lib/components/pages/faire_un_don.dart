@@ -13,10 +13,13 @@ class PageDon extends StatefulWidget {
 }
 
 class _PageDonState extends State<PageDon> {
-  var remerciement = "Je tiens à vous exprimer toute ma gratitude pour votre "
-      "généreux don. Votre contribution aura un impact significatif"
-      " sur [la cause, l'organisation, etc.] que je soutiens "
-      "et je suis très reconnaissant(e) de votre soutien.";
+  var remerciement = "Je tiens à vous exprimer toute ma gratitude "
+      "pour votre généreux don. Votre contribution aura un impact "
+      "significatif sur mon travail et je suis très reconnaissant de votre soutien.\n\n"
+      "Vos présents m'aideront à me procurer des outils de "
+      "développement, notamment un ordinateur, un téléphone et de la connexion "
+      "internet pour travailler et vous fournir de meilleurs services.\n\n Merci et que Dieu vous bénisse.";
+
   TextEditingController _controllerMontant = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -28,12 +31,15 @@ class _PageDonState extends State<PageDon> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 40,),
+            SizedBox(height: 20,),
+            Text("Remerciements",style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
             Container(
+              width: 290,
               margin: EdgeInsets.all(20),
                 child: Text(remerciement,
                   style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
-                  textAlign: TextAlign.center,)),
+                  textAlign: TextAlign.center,
+                  )),
 
             SizedBox(height: 40,),
             CustomButton(

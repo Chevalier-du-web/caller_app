@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
-
-import '../components/custom_card.dart';
+import '../custom_card.dart';
 
 
 class SoldConsult extends StatefulWidget {
@@ -55,7 +54,7 @@ class _SoldConsultState extends State<SoldConsult> {
               SizedBox(height: 20,),
               CustomCard(
                 onpressed: ()async{
-                  await FlutterPhoneDirectCaller.callNumber('*825*1*2*1#');
+                  await FlutterPhoneDirectCaller.callNumber('*825*3*2*1#');
                 },
                 image: 'assets/camtel_logo.jpg',
                 title: 'CAMTEL',

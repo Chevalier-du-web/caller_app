@@ -2,11 +2,19 @@
 class Assets {
   Assets._();
 
+  static const String assetsBg = 'assets/bg.jpg';
+  static const String assetsBg2 = 'assets/bg2.jpg';
+  static const String assetsBuy = 'assets/buy.png';
+  static const String assetsCalling = 'assets/calling.gif';
   static const String assetsCamWater = 'assets/cam_water.jpg';
   static const String assetsCamtel = 'assets/camtel.png';
   static const String assetsCamtelLogo = 'assets/camtel_logo.jpg';
   static const String assetsCamtelo = 'assets/camtelo.png';
   static const String assetsCanalplus = 'assets/canalplus.png';
+  static const String assetsChat = 'assets/chat.png';
+  static const String assetsDeep = 'assets/deep.png';
+  static const String assetsDoctor = 'assets/doctor.png';
+  static const String assetsDon = 'assets/don.gif';
   static const String assetsEneo = 'assets/eneo.jpg';
   static const String assetsEneoorange = 'assets/eneoorange.PNG';
   static const String assetsEneoprepayorange = 'assets/eneoprepayorange.PNG';
@@ -15,6 +23,9 @@ class Assets {
   static const String assetsImage2 = 'assets/image2.png';
   static const String assetsImage3 = 'assets/image3.png';
   static const String assetsImpot = 'assets/impot.png';
+  static const String assetsLogin = 'assets/login.png';
+  static const String assetsLogo = 'assets/logo.png';
+  static const String assetsLogo3 = 'assets/logo3.png';
   static const String assetsLogoOrange = 'assets/logo-orange.jpg';
   static const String assetsMTNLogo = 'assets/MTN-Logo.png';
   static const String assetsMtn = 'assets/mtn.PNG';
@@ -24,6 +35,7 @@ class Assets {
   static const String assetsMtntarrcopie = 'assets/mtntarrcopie.png';
   static const String assetsMtntransf = 'assets/mtntransf.PNG';
   static const String assetsNexttelCameroonLogo = 'assets/Nexttel-Cameroon-Logo.png';
+  static const String assetsOpinion = 'assets/opinion.gif';
   static const String assetsOrangeTarif = 'assets/orange-tarif.png';
   static const String assetsOrangeTarifs = 'assets/orange_tarifs.PNG';
   static const String assetsOrangegimac = 'assets/orangegimac.PNG';

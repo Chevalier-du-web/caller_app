@@ -33,7 +33,7 @@ class Apropos extends StatelessWidget {
               background: Container(
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('assets/servus.jpg'),fit: BoxFit.cover
+                    image: AssetImage('assets/logo3.png'),fit: BoxFit.cover
                   ),
                 ),
               ),

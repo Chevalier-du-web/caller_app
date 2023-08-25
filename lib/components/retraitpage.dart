@@ -1,11 +1,10 @@
 import 'package:caller/components/choix_reseau.dart';
+import 'package:caller/components/pages/callbox_page.dart';
+import 'package:caller/components/pages/tarif_mtn.dart';
+import 'package:caller/components/pages/tarif_orange.dart';
 import 'package:caller/components/transfert_argent.dart';
-import 'package:caller/pages/callbox_page.dart';
-import 'package:caller/pages/tarif_mtn.dart';
-import 'package:caller/pages/tarif_orange.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
-
 import 'button.dart';
 import 'header_title.dart';
 import 'option_money.dart';
@@ -34,7 +33,7 @@ class _RetraitPageState extends State<RetraitPage> {
           SizedBox(height: 10,),
           CustomButton(onpressed: ()=>ChoixReseaux('transfert'), title: 'Transfert d\'argent',),
           SizedBox(height: 10,),
-          CustomButton(onpressed: ()=>ChoixReseaux('callbox'), title: 'CallBox (transfert de credit)   ',),
+          CustomButton(onpressed: ()=>ChoixReseaux('callbox'), title: 'CallBox (transfert)',),
           SizedBox(height: 10,),
           CustomButton(onpressed: ()=>ChoixReseaux('tarifs'), title: 'Tarification',),
 
@@ -64,7 +63,7 @@ class _RetraitPageState extends State<RetraitPage> {
         child: Column(
           children: [
             SizedBox(height: 5,),
-            Text('Choix du reseau ',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+            Text('Choix du réseau ',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
             SizedBox(height: 7,),
             InkWell(
               onTap: (){

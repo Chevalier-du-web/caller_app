@@ -10,60 +10,57 @@ class ForfaitAppel extends StatefulWidget {
 }
 
 class _ForfaitAppelState extends State<ForfaitAppel> {
-  var orange = [{
+  var orange = [
+    {
     'photo':'assets/logo-orange.jpg',
-    'forfait':'Appel jour',
-    'quantite':'102F 1200F',
-    'code':'#131*2*1#'
+    'forfait':'Orange Appel',
+    'quantite':'Uniquement Orange',
+    'code':'#111*1*1*2#'
   },
     {
       'photo':'assets/logo-orange.jpg',
-      'forfait':'Appel jour',
-      'quantite':'128F 850F/tout reseau',
+      'forfait':'Orange Appel',
+      'quantite':'Tous réseaux',
+      'code':'#111*1*1*1#'
+    },
+    {
+      'photo':'assets/logo-orange.jpg',
+      'forfait':'Orange Appel',
+      'quantite':'Tous réseaux+internet',
+      'code':'#111*1*1*3#'
+    },
+    {
+      'photo':'assets/logo-orange.jpg',
+      'forfait':'Orange Appel 2',
+      'quantite':'Forfait appel',
       'code':'#131*2*2#'
     },
     {
       'photo':'assets/logo-orange.jpg',
-      'forfait':'Appel jour',
-      'quantite':'250F 1050F+125Mo',
-      'code':'#131*2*2#'
+      'forfait':'Orange Appel international',
+      'quantite':'Forfait appel international',
+      'code':'#131*3#'
     },
     {
       'photo':'assets/logo-orange.jpg',
-      'forfait':'Appel semaine',
-      'quantite':'250F 3200F',
-      'code':'#131*8*1#'
+      'forfait':'Orange Appel ',
+      'quantite':'Forfait appel Semaine',
+      'code':'#131*8#'
     },
     {
       'photo':'assets/logo-orange.jpg',
-      'forfait':'Appel semaine',
-      'quantite':'765F 4550F/tous reseaux',
-      'code':'#131*8*2#'
+      'forfait':'Orange Appel Mois',
+      'quantite':'Forfait appel Mois',
+      'code':'#131*7#'
     },
     {
       'photo':'assets/logo-orange.jpg',
-      'forfait':'Appel semaine',
-      'quantite':'1100F 3950F+525Mo',
-      'code':'#131*8*2#'
+      'forfait':'Ma surprise',
+      'quantite':'Offre Appel gratuit',
+      'code':'#131*9#'
     },
-    {
-      'photo':'assets/logo-orange.jpg',
-      'forfait':'Appel mois',
-      'quantite':'3000F 41000F',
-      'code':'#131*7*1#'
-    },
-    {
-      'photo':'assets/logo-orange.jpg',
-      'forfait':'Appel mois',
-      'quantite':'3000F 21000F/tous reseaux',
-      'code':'#131*7*2#'
-    },
-    {
-      'photo':'assets/logo-orange.jpg',
-      'forfait':'Appel mois',
-      'quantite':'4500F 31500F+2000Mo',
-      'code':'#131*7*3#'
-    },];
+
+   ];
   var mtn = [
     {
       'photo':'assets/MTN-Logo.png',
@@ -73,200 +70,80 @@ class _ForfaitAppelState extends State<ForfaitAppel> {
     },
     {
       'photo':'assets/MTN-Logo.png',
-      'forfait':'Meilleures offres',
+      'forfait':'Super promo',
       'quantite':'variables',
-      'code':'*123#'
+      'code':'*123*0#'
     },
-    {
-    'photo':'assets/MTN-Logo.png',
-    'forfait':'Super promo',
-    'quantite':'bonus appel',
-    'code':'*123*0#'
-  },
+
     {
       'photo':'assets/MTN-Logo.png',
-      'forfait':'Appel jour',
-      'quantite':'500F 4500F',
-      'code':'*123*3*1*2*1*1#'
+      'forfait':'Mtn Appel Plan',
+      'quantite':'Forfait Tous réseaux',
+      'code':'*123*3*1*1*1#'
     },
     {
       'photo':'assets/MTN-Logo.png',
-      'forfait':'Appel jour',
-      'quantite':'1000F 10000F',
-      'code':'*123*3*1*2*1*2#'
+      'forfait':'Mtn Appel Plan',
+      'quantite':'Forfait MTN uniquement',
+      'code':'*123*3*1*1*2#'
     },
     {
       'photo':'assets/MTN-Logo.png',
-      'forfait':'Appel semaine',
-      'quantite':'500F 3500F',
-      'code':'*123*3*1*2*2*1#'
+      'forfait':'Mtn Appel Plan',
+      'quantite':'Forfait Tous réseaux et internet',
+      'code':'*123*3*1*1*3#'
     },
     {
       'photo':'assets/MTN-Logo.png',
-      'forfait':'Appel semaine',
-      'quantite':'1000F 9000F',
-      'code':'*123*3*1*2*2*2#'
+      'forfait':'Mtn Wanda',
+      'quantite':'Forfait jour',
+      'code':'*123*3*1*2*1#'
     },
     {
       'photo':'assets/MTN-Logo.png',
-      'forfait':'Appel semaine',
-      'quantite':'2500F 25000F',
-      'code':'*123*3*1*2*2*3#'
+      'forfait':'Mtn Wanda',
+      'quantite':'Forfait Semaine',
+      'code':'*123*3*1*2*2#'
     },
     {
       'photo':'assets/MTN-Logo.png',
-      'forfait':'Appel semaine',
-      'quantite':'5000F 55000F',
-      'code':'*123*3*1*2*2*4#'
+      'forfait':'Mtn Wanda',
+      'quantite':'Forfait Mois',
+      'code':'*123*3*1*2*3#'
     },
     {
       'photo':'assets/MTN-Logo.png',
-      'forfait':'Appel mois',
-      'quantite':'1000F 7500F',
-      'code':'*123*3*1*2*3*1#'
+      'forfait':'Mtn Magic',
+      'quantite':'Forfait magic',
+      'code':'*123*3*1*3#'
     },
     {
       'photo':'assets/MTN-Logo.png',
-      'forfait':'Appel mois',
-      'quantite':'2500F 23750F',
-      'code':'*123*3*1*2*3*2#'
+      'forfait':'Mtn International',
+      'quantite':'Forfait Appel international',
+      'code':'*123*3*1*4#'
     },
     {
       'photo':'assets/MTN-Logo.png',
-      'forfait':'Appel mois',
-      'quantite':'5000F 52500F',
-      'code':'*123*3*1*2*3*3#'
+      'forfait':'Mtn Roaming',
+      'quantite':'Forfait Roaming',
+      'code':'*123*3*1*5#'
     },
-    {
-      'photo':'assets/MTN-Logo.png',
-      'forfait':'Appel mois',
-      'quantite':'10000F 115000F',
-      'code':'*123*3*1*2*3*4#'
-    },
-    {
-      'photo':'assets/MTN-Logo.png',
-      'forfait':'Yamo Kongossa',
-      'quantite':'50F 5 minutes appels /24H',
-      'code':'*220*1*1*1#'
-    },
-    {
-      'photo':'assets/MTN-Logo.png',
-      'forfait':'Yamo Kongossa',
-      'quantite':'199F 1450F/30 jours',
-      'code':'*220*1*1*2#'
-    },
-    {
-      'photo':'assets/MTN-Logo.png',
-      'forfait':'Yamo Kongossa',
-      'quantite':'399F 2925F/30 jours',
-      'code':'*220*1*1*3#'
-    }, {
-      'photo':'assets/MTN-Logo.png',
-      'forfait':'Yamo Kongossa',
-      'quantite':'1000F 10.000F/30 jours',
-      'code':'*220*1*1*4#'
-    },
-    {
-      'photo':'assets/MTN-Logo.png',
-      'forfait':'Yamo 5kolo',
-      'quantite':'5000F 15.000F tous  réseaux \n +3Go + SMS illimité 30 jours',
-      'code':'*220*1*4*1#'
-    }, {
-      'photo':'assets/MTN-Logo.png',
-      'forfait':'Yamo Kongossa',
-      'quantite':'500F 2.700F/7jours \n +43.000F MTN/minuit/7 jours',
-      'code':'*222*0#'
-    }, {
-      'photo':'assets/MTN-Logo.png',
-      'forfait':'MTN tous réseaux',
-      'quantite':'250F 1100F/24H',
-      'code':'*222*1*1#'
-    }, {
-      'photo':'assets/MTN-Logo.png',
-      'forfait':'MTN tous réseaux',
-      'quantite':'500F 2500F/3 jours',
-      'code':'*222*1*2#'
-    }, {
-      'photo':'assets/MTN-Logo.png',
-      'forfait':'MTN tous réseaux',
-      'quantite':'1000F 5550F/7 jours',
-      'code':'*222*1*3#'
-    },
-    {
-      'photo':'assets/MTN-Logo.png',
-      'forfait':'MTN tous reseaux',
-      'quantite':'3.000F 18.950F/30 jours',
-      'code':'*222*1*4#'
-    }, {
-      'photo':'assets/MTN-Logo.png',
-      'forfait':'MTN uniquement',
-      'quantite':'250F 3000F/24H',
-      'code':'*222*2*1#'
-    }, {
-      'photo':'assets/MTN-Logo.png',
-      'forfait':'MTN uniquement',
-      'quantite':'500F 6100F/3 jours',
-      'code':'*222*2*2#'
-    }, {
-      'photo':'assets/MTN-Logo.png',
-      'forfait':'MTN uniquement',
-      'quantite':'1000F 12.450F/7 jours',
-      'code':'*222*2*3#'
-    },
-    {
-      'photo':'assets/MTN-Logo.png',
-      'forfait':'MTN uniquement',
-      'quantite':'3000F 42.500F/30 jours',
-      'code':'*222*2*4#'
-    }, {
-      'photo':'assets/MTN-Logo.png',
-      'forfait':'MTN uniquement',
-      'quantite':'variable',
-      'code':'*200#'
-    },
+
   ];
   var camtel = [{
-    'photo':'assets/camtelo.png',
-    'forfait':'Blue One ',
-    'quantite':'2.000F 15min+100SMS /7jours',
-    'code':'*825*5*1*1*2#'
+    'photo':'assets/camtel_logo.jpg',
+    'forfait':'Blue Appel illimité ',
+    'quantite':'2000F illimité 30 jours',
+    'code':'*825*1*1*3#'
   },
     {
-      'photo':'assets/camtelo.png',
-      'forfait':'Blue One ',
-      'quantite':'3.000F 30min+200SMS /30jours',
-      'code':'*825*5*1*1*3#'
+      'photo':'assets/camtel_logo.jpg',
+      'forfait':'Blue Appel ',
+      'quantite':'Forfait Appel',
+      'code':'*825*1*1*1#'
     },
-    {
-      'photo':'assets/camtelo.png',
-      'forfait':'Blue One ',
-      'quantite':'5.000F 45min+300SMS /30jours',
-      'code':'*825*5*1*1*4#'
-    },
-    {
-      'photo':'assets/camtelo.png',
-      'forfait':'Blue One ',
-      'quantite':'   10.000F 60min+400SMS \npendant 30 jours',
-      'code':'*825*5*1*1*5#'
-    },
-    {
-      'photo':'assets/camtelo.png',
-      'forfait':'Blue One ',
-      'quantite':'   20.000F 75min+500SMS \npendant 30 jours',
-      'code':'*825*5*1*1*6#'
-    },
-    {
-      'photo':'assets/camtelo.png',
-      'forfait':'Blue One ',
-      'quantite':'250F 5Go/24H(00H-06H)',
-      'code':'*825*5*1*1*15#'
-    },
-    {
-      'photo':'assets/camtelo.png',
-      'forfait':'Appel illimité ',
-      'quantite':'2.000F illimité pendant 30 jours',
-      'code':'*825*5*1*3*17#'
-    },
+
 
   ];
   var nexttel = [

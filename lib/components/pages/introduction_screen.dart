@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import '../homepage.dart';
+import '../../pages_introduction/page1.dart';
+import '../../pages_introduction/page2.dart';
+import '../../pages_introduction/page3.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import '../pages_introduction/page1.dart';
-import '../pages_introduction/page2.dart';
-import '../pages_introduction/page3.dart';
+
 
 
 class IntroductionScreen extends StatefulWidget {

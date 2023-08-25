@@ -1,7 +1,5 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:caller/pages/faire_un_don.dart';
-import 'package:caller/pages/historique.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'dart:io';
@@ -11,7 +9,9 @@ import 'components/drawerHome.dart';
 import 'components/forfaitAppel.dart';
 import 'components/forfaitInternet.dart';
 import 'components/forfaitSMS.dart';
+import 'components/pages/faire_un_don.dart';
 import 'components/retraitpage.dart';
+import 'onboarding_malia/onboarding_malia.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -103,6 +103,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           preferredSize: const Size.fromHeight(120.0),child: Column(
           children: [
             InkWell(
+              //PageDon- OnboardingMalia
               onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>PageDon())),
               child: Container(
                 width: 270,

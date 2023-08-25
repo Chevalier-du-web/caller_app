@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
 
-import '../components/custom_card.dart';
+import '../custom_card.dart';
+
 
 class PaymentFacture extends StatefulWidget {
   const PaymentFacture({Key? key}) : super(key: key);
@@ -58,7 +59,7 @@ class _PaymentFactureState extends State<PaymentFacture> {
                   child: Text('Choix de la facture',
                     style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),)),
               SizedBox(height: 40,),
-              CustomCard(onpressed: ()=>ChoixReseaux('ENEO prépayé'), image: 'assets/eneo.jpg', title: 'Eneo', type: 0,),
+              CustomCard(onpressed: ()=>ChoixReseaux('eneo'), image: 'assets/eneo.jpg', title: 'ENEO prépayé', type: 0,),
 
               SizedBox(height: 12,),
               CustomCard(onpressed: ()=>ChoixReseaux('camwater'), image: 'assets/cam_water.jpg', title: 'CAMWATER', type: 0,),

@@ -8,8 +8,8 @@ class HeaderTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Container(
       width: 270,
-      height: 60,
-      margin: EdgeInsets.only(top: 20),
+      height: 70,
+      margin: EdgeInsets.only(top: 10),
       padding: EdgeInsets.all(18),
       decoration: BoxDecoration(
           color: Colors.transparent,

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
 
-import '../components/custom_card.dart';
+import '../custom_card.dart';
 
 class MonNumero extends StatefulWidget {
   const MonNumero({Key? key}) : super(key: key);
@@ -78,7 +78,7 @@ class _MonNumeroState extends State<MonNumero> {
               SizedBox(height: 20,),
               CustomCard(
                 onpressed: ()async{
-                  await FlutterPhoneDirectCaller.callNumber('*825*1*3#');
+                  await FlutterPhoneDirectCaller.callNumber('*825*3*3#');
                 },
                 image: 'assets/camtel_logo.jpg',
                 title: 'CAMTEL',

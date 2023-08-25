@@ -15,7 +15,14 @@ class CardForfait extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return Container(
+      margin: EdgeInsets.all(6),
+      padding: EdgeInsets.all(6),
+      decoration: BoxDecoration(
+        color: Colors.transparent,
+          border: Border.all(color: Colors.grey.withOpacity(.4),width: 3),
+          borderRadius: BorderRadius.circular(20)
+      ),
       child:
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -25,7 +32,7 @@ class CardForfait extends StatelessWidget {
               SizedBox(width: 16,),
               Container(
                 width: 60,
-                height: 40,
+                height: 50,
                decoration: BoxDecoration(
                  color: Colors.transparent,
                  borderRadius: BorderRadius.circular(90),
@@ -37,9 +44,10 @@ class CardForfait extends StatelessWidget {
               ),
               SizedBox(width: 13,),
               Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(forfait,style: TextStyle(fontWeight: FontWeight.bold),),
-                  Text(quantite,style: TextStyle(fontSize: 12)),
+                  Text(forfait,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16),),
+                  Text(quantite,style: TextStyle(fontSize: 15)),
                 ],
               ),
 

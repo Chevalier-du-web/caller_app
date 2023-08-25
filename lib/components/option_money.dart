@@ -23,7 +23,7 @@ class _RetraitArgentState extends State<RetraitArgent> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Formulaire de retrait'),
+        title: Text('Retrait ${ widget.type==1?"Orange Money":"MTN Money"}'),
       ),
       body: SingleChildScrollView(
         physics: AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
@@ -33,7 +33,7 @@ class _RetraitArgentState extends State<RetraitArgent> {
               children: [
                 SizedBox(height: 40,),
 
-                Container(
+                widget.type==1?Container(
                   width: 270,
                   padding: EdgeInsets.only(left: 15),
                   decoration: BoxDecoration(
@@ -54,7 +54,9 @@ class _RetraitArgentState extends State<RetraitArgent> {
                     ),
                     onEditingComplete: ()=>FocusScope.of(context).nextFocus(),
                   ),
-                ),
+                ):
+                Container(),
+
                 SizedBox(height: 30,),
 
                 //numero de telephone ...
@@ -74,7 +76,7 @@ class _RetraitArgentState extends State<RetraitArgent> {
                     decoration: InputDecoration(
                         hintText: 'Téléphone ',
                         label: Text("Téléphone"),
-                        labelStyle: TextStyle(fontSize: 20),
+                        labelStyle: TextStyle(fontSize: 17),
                         border: OutlineInputBorder(),
                       prefixIcon: Icon(Icons.phone)
                     ),
@@ -120,7 +122,7 @@ class _RetraitArgentState extends State<RetraitArgent> {
                     decoration: InputDecoration(
                         hintText: 'Montant du retrait',
                         label: Text("Montant du retrait"),
-                        labelStyle: TextStyle(fontSize: 20),
+                        labelStyle: TextStyle(fontSize: 17),
                         border: OutlineInputBorder(),
                         prefixIcon: Icon(Icons.attach_money_rounded)
                     ),
@@ -148,8 +150,12 @@ class _RetraitArgentState extends State<RetraitArgent> {
                 SizedBox(height: 30,),
                 CustomButton(
                   onpressed: ()async{
+                    widget.type==1?
                     await FlutterPhoneDirectCaller.callNumber('#150*14*${_codeMarchant.text}'
-                        '*${_phone.text}*${_montant.text}#');
+                        '*${_phone.text}*${_montant.text}#'):
+                    await FlutterPhoneDirectCaller.callNumber('*126*14*${_phone.text}*${_montant.text}#')
+
+                    ;
                   },
                 title: 'Composer'),
                 SizedBox(height: 130,)

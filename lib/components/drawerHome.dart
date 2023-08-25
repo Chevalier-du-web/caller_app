@@ -1,18 +1,19 @@
 import 'dart:io';
-import 'package:caller/pages/calcul_tarifs.dart';
-import 'package:share/share.dart';
-import 'package:caller/pages/apropos.dart';
-import 'package:caller/pages/composer.dart';
-import 'package:caller/pages/mon_numero.dart';
-import 'package:caller/pages/payment_facture.dart';
-import 'package:caller/pages/recharge.dart';
-import 'package:caller/pages/soldes_consult.dart';
+import 'package:caller/components/pages/apropos.dart';
+import 'package:caller/components/pages/calcul_tarifs.dart';
+import 'package:caller/components/pages/composer.dart';
+import 'package:caller/components/pages/mon_numero.dart';
+import 'package:caller/components/pages/payment_facture.dart';
+import 'package:caller/components/pages/recharge.dart';
+import 'package:caller/components/pages/soldes_consult.dart';
+
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:adaptive_theme/adaptive_theme.dart';
 
 
 import 'package:flutter/services.dart';
+import 'package:share/share.dart';
 
 import 'list_widget.dart';
 // import 'package:share_plus/share_plus.dart';
@@ -171,7 +172,8 @@ class _DrawerHomeState extends State<DrawerHome> {
 
               ],
             ),
-          )
+          ),
+          SizedBox(height: 20,)
         ],
       ),
     );

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 
-import '../components/button.dart';
+import '../button.dart';
 
 class CallBoxPage extends StatefulWidget {
   const CallBoxPage({Key? key, required this.type}) : super(key: key);
@@ -14,7 +14,9 @@ class CallBoxPage extends StatefulWidget {
 class _CallBoxPageState extends State<CallBoxPage> {
   TextEditingController phoneSaisi = TextEditingController();
   TextEditingController montantSaisi = TextEditingController();
-  
+  TextEditingController codesecret = TextEditingController();
+
+
   @override
   Widget build(BuildContext context) {
     double _h = MediaQuery.of(context).size.height;
@@ -22,7 +24,7 @@ class _CallBoxPageState extends State<CallBoxPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Transfert de credit '
+        title: Text('Transfert de crédit '
             '${widget.type==0?"Orange":widget.type==1?"Mtn":
         widget.type==2?"Camtel":"Nexttel"}'),
       ),
@@ -85,6 +87,28 @@ class _CallBoxPageState extends State<CallBoxPage> {
                   ),
                 ),
               ),
+              SizedBox(height: 12,),
+              widget.type==3?Center(
+                child: Container(
+                  width: 270,
+                  padding: EdgeInsets.only(left: 10),
+                  decoration: BoxDecoration(
+                    color: Colors.transparent,
+                    //border: Border.all(),borderRadius: BorderRadius.circular(0)
+                  ),
+                  child: TextField(
+                    controller: codesecret,
+                    keyboardType: TextInputType.number,
+                    style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        label: Text('Code secret'),
+                        prefixIcon: Icon(Icons.monetization_on_outlined),
+                        hintStyle: TextStyle(fontSize: 16)
+                    ),
+                  ),
+                ),
+              ):Container(),
               SizedBox(height: 40,),
               CustomButton(onpressed: () async{
 
@@ -92,7 +116,9 @@ class _CallBoxPageState extends State<CallBoxPage> {
                   await FlutterPhoneDirectCaller.callNumber(
                       widget.type==0?
                       '#189*1*${phoneSaisi.text}*${montantSaisi.text}#'
-                          :'*150*${montantSaisi.text}*${phoneSaisi.text}#');
+                          :widget.type==1?'*150*${montantSaisi.text}*${phoneSaisi.text}#':
+                widget.type==2?'*825*3*6*${montantSaisi.text}*${phoneSaisi.text}#':
+                '*869*${codesecret.text}*${phoneSaisi.text}*${montantSaisi.text}#');
 
               }, title: 'Composer',),
 

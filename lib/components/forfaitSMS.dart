@@ -13,89 +13,66 @@ class _ForfaitSMSState extends State<ForfaitSMS> {
   var orange = [  {
     'photo':'assets/logo-orange.jpg',
     'forfait':'SMS jour',
-    'quantite':'102F 25 sms',
+    'quantite':'102F = 200 SMS',
     'code':'#131*1*1#'
   },
     {
       'photo':'assets/logo-orange.jpg',
       'forfait':'SMS semaine',
-      'quantite':'255F sms illimité',
+      'quantite':'250F = 100 SMS/jours',
       'code':'#131*1*2#'
     },
     {
       'photo':'assets/logo-orange.jpg',
       'forfait':'SMS mois',
-      'quantite':'459F sms illimité',
+      'quantite':'475F = 100 SMS/30 jours',
       'code':'#131*1*3#'
     },];
   var mtn = [ {
     'photo':'assets/MTN-Logo.png',
     'forfait':'SMS jour',
-    'quantite':'20F SMS illimité ',
+    'quantite':'50F = 50 SMS/24H ',
     'code':'*123*5*1*1#'
   },
     {
       'photo':'assets/MTN-Logo.png',
-      'forfait':'SMS jour',
-      'quantite':'50F SMS illimité +50Mo',
+      'forfait':'MTN SMS ',
+      'quantite':'500F = 50 SMS/Jour',
+      'code':'*123*5*1*2#'
+    },
+    {
+      'photo':'assets/MTN-Logo.png',
+      'forfait':'MTN SMS',
+      'quantite':'100F = 50 SMS+100Mo \nWhatsapp/24H ',
       'code':'*123*5*1*3#'
     },
     {
       'photo':'assets/MTN-Logo.png',
-      'forfait':'SMS semaine',
-      'quantite':'250F SMS illimité \n+100Mo Whatsapp ',
+      'forfait':'MTN SMS mois',
+      'quantite':'250F = 50 SMS par jour \n+100Mo Whatsapp /30 jours ',
       'code':'*123*5*1*4#'
     },
     {
       'photo':'assets/MTN-Logo.png',
       'forfait':'SMS mois',
-      'quantite':'750F SMS illimite \n+300Mo Whatsapp ',
+      'quantite':'750F = 50 par jour SMS \n+300Mo Whatsapp/30 jours ',
       'code':'*123*5*1*5#'
     },
     {
       'photo':'assets/MTN-Logo.png',
-      'forfait':'SMS mois',
-      'quantite':'500F SMS illimité ',
-      'code':'*123*5*1*2#'
+      'forfait':'MTN Bonus Ayoba',
+      'quantite':'Offre gratuite de megas ',
+      'code':'*123*5*1*5#'
     },
 
   ];
-  var camtel = [{
-    'photo':'assets/camtelo.png',
-    'forfait':'TOLI XS',
-    'quantite':'    500F 500Mo+50min\n+50SMS 30jrs',
-    'code':'*825*2*1*1*1#'
+  var camtel = [
+    {
+      'photo':'assets/camtel_logo.jpg',
+    'forfait':'Blue SMS',
+    'quantite':'Forfait SMS+internet+Appel',
+    'code':'*825*1*1*1#'
   },
-    {
-      'photo':'assets/camtelo.png',
-      'forfait':'TOLI S',
-      'quantite':'    2.000F 2Go+200min\n+200SMS 30jrs',
-      'code':'*825*2*1*2*1#'
-    },
-    {
-      'photo':'assets/camtelo.png',
-      'forfait':'TOLI M',
-      'quantite':'    5.000F 5Go+500min\n+500SMS 30jrs',
-      'code':'*825*2*1*3*1#'
-    },
-    {
-      'photo':'assets/camtelo.png',
-      'forfait':'TOLI XS',
-      'quantite':'    10.000F 10Go+1000min\n+1000SMS 30jrs',
-      'code':'*825*2*1*4*1#'
-    },
-    {
-      'photo':'assets/camtelo.png',
-      'forfait':'TOLI XS',
-      'quantite':'    20.000F 20Go+2000min\n+2000SMS 30jrs',
-      'code':'*825*2*1*5*1#'
-    },
-    {
-      'photo':'assets/camtelo.png',
-      'forfait':'TOLI XS',
-      'quantite':'    35.000F 35Go+3500min\n+3500SMS 30jrs',
-      'code':'*825*2*1*6*1#'
-    }
   ];
   var nexttel = [
     {
