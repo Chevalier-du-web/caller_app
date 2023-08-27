@@ -43,12 +43,12 @@ class _RetraitArgentState extends State<RetraitArgent> {
                   ),
                   child: TextField(
                     controller: _codeMarchant,
-                    style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
-                        hintText: 'Code marchant',
+                        hintText: 'Code marchand',
                         label: Text("Code marchand"),
-                        labelStyle: TextStyle(fontSize: 20),
+                        labelStyle: TextStyle(fontSize: 15),
                         border: OutlineInputBorder(),
                       prefixIcon: Icon(Icons.security)
                     ),
@@ -71,12 +71,12 @@ class _RetraitArgentState extends State<RetraitArgent> {
                   ),
                   child: TextField(
                     controller: _phone,
-                    style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
                         hintText: 'Téléphone ',
                         label: Text("Téléphone"),
-                        labelStyle: TextStyle(fontSize: 17),
+                        labelStyle: TextStyle(fontSize: 15),
                         border: OutlineInputBorder(),
                       prefixIcon: Icon(Icons.phone)
                     ),
@@ -97,7 +97,7 @@ class _RetraitArgentState extends State<RetraitArgent> {
                   ),
                   child: TextField(
                     controller: _montant,
-                    style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),
                     onChanged: (value){
                       setState(() {
                         if (widget.type==1){
@@ -122,7 +122,7 @@ class _RetraitArgentState extends State<RetraitArgent> {
                     decoration: InputDecoration(
                         hintText: 'Montant du retrait',
                         label: Text("Montant du retrait"),
-                        labelStyle: TextStyle(fontSize: 17),
+                        labelStyle: TextStyle(fontSize: 15),
                         border: OutlineInputBorder(),
                         prefixIcon: Icon(Icons.attach_money_rounded)
                     ),
@@ -141,8 +141,8 @@ class _RetraitArgentState extends State<RetraitArgent> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text('Frais : ',
-                          style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+                        Text('Frais de retrait: ',
+                          style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
                         Text(' $frais FCFA',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
 
                       ],

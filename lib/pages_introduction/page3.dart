@@ -16,7 +16,7 @@ class Page3 extends StatelessWidget {
       children: [
 
         Container(
-          margin: EdgeInsets.only(top: _h/8),
+          margin: EdgeInsets.only(top: _h/5),
           height: 200,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(90),
@@ -28,22 +28,22 @@ class Page3 extends StatelessWidget {
         ),
         Container(
             margin: EdgeInsets.only(left:_h/19,right: _h/19,top: _h/25,),
-            child: Text('   Consultez les meilleurs forfaits',
+            child: Text('   Consultez les meilleurs forfaits',textAlign: TextAlign.center,
               style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)),
         Container(
           margin: EdgeInsets.only(top:_h/30,left: _w/8,right: _w/8),
           child: Text('    Que ce soit vos forfaits d\'apppel, d\'internet ou de SMS'
-              ' sur tous vos réseaux .',style: TextStyle(fontSize: 16),),
+              ' sur tous vos réseaux .',style: TextStyle(fontSize: 20),textAlign: TextAlign.center,),
         ),
 
         GestureDetector(
           onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>MyCustomSplashScreen())),
           child: Container(
-            margin: EdgeInsets.only(top: _h/20),
-            padding: EdgeInsets.only(left: 40,right: 40,top: 10,bottom: 10),
+            margin: EdgeInsets.only(top: _h/8),
+            padding: EdgeInsets.only(left: 60,right: 60,top: 15,bottom: 15),
             decoration: BoxDecoration(
-              color: Colors.blue,
-              borderRadius: BorderRadius.circular(35)
+              color: Colors.teal,
+              borderRadius: BorderRadius.circular(20)
             ),
             child: Text('Commencer',style: TextStyle(fontSize: 17,color: Colors.white,fontWeight: FontWeight.bold),),
           ),

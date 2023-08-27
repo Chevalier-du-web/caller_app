@@ -48,14 +48,17 @@ class _MonNumeroState extends State<MonNumero> {
             children: [
               SizedBox(height: 40,),
               Container(
+                width: 250,
                 padding: EdgeInsets.all(17),
                 decoration: BoxDecoration(
                   color: Colors.transparent,
                   border: Border.all(color: Colors.grey),
                   borderRadius: BorderRadius.circular(10)
                 ),
-                child: Text('Quel numéro voulez-vous avoir ?',
-                  style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+                child: Center(
+                  child: Text('Choix du réseau ',
+                    style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                ),
               ),
               SizedBox(height: 40,),
               CustomCard(

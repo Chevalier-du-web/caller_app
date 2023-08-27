@@ -43,7 +43,7 @@ class _TransfertArgentState extends State<TransfertArgent> {
                 ),
               ),
 
-              SizedBox(height: 20,),
+              SizedBox(height: MediaQuery.of(context).size.height/7,),
 
               same_phone !=1?Column(
                 children: [
@@ -53,7 +53,7 @@ class _TransfertArgentState extends State<TransfertArgent> {
                       same_phone = 1;
                     });
                   }, title: 'Vers un numéro ${widget.type==1?'orange':'MTN'}',),
-                  SizedBox(height: 20,),
+                  SizedBox(height: 30,),
 
                   CustomButton(onpressed:  ()async{
                     widget.type==1?await FlutterPhoneDirectCaller.callNumber('#150*1*3*#')
@@ -83,12 +83,12 @@ class _TransfertArgentState extends State<TransfertArgent> {
             ),
             child: TextField(
               controller: _telephone,
-              style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
                   hintText: 'Saisir le numéro',
                   label: Text("Téléphone du bénéficiaire"),
-                  labelStyle: TextStyle(fontSize: 16),
+                  labelStyle: TextStyle(fontSize: 15),
                   border: OutlineInputBorder(),
                   prefixIcon: Icon(Icons.phone)
               ),
@@ -107,7 +107,7 @@ class _TransfertArgentState extends State<TransfertArgent> {
             ),
             child: TextField(
               controller: _montant,
-              style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),
               onChanged: (value){
                 setState(() {
                   if (widget.type==1){
@@ -129,7 +129,7 @@ class _TransfertArgentState extends State<TransfertArgent> {
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
                   hintText: 'Saisir le montant',
-                  labelStyle: TextStyle(fontSize: 16),
+                  labelStyle: TextStyle(fontSize: 15),
                   label: Text("Montant du transfert"),
                   border: OutlineInputBorder(),
                   prefixIcon: Icon(Icons.attach_money)
@@ -148,8 +148,8 @@ class _TransfertArgentState extends State<TransfertArgent> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Frais : ',
-                    style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+                  Text('Frais d\'envoi : ',
+                    style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
                   Text(' $frais FCFA',style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
 
                 ],

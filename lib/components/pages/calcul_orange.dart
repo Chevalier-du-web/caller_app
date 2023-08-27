@@ -34,8 +34,15 @@ class _CalculOrangeState extends State<CalculOrange> {
                     color: Colors.grey.withOpacity(.2),
                     borderRadius: BorderRadius.circular(10)
                   ),
-                  child: Text('Frais d\'envoi :   ${resultTransfert} FCFA',
-                    style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),)),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('Frais d\'envoi :',
+                        style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14),),
+                      Text('${resultTransfert} FCFA',
+                        style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14),),
+                    ],
+                  )),
 
               Container(
                 width: 310,
@@ -45,8 +52,15 @@ class _CalculOrangeState extends State<CalculOrange> {
                       color: Colors.grey.withOpacity(.2),
                       borderRadius: BorderRadius.circular(10)
                   ),
-                  child: Text('Frais de retrait :   ${resultTRetrait} FCFA',
-                    style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),)),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('Frais de retrait : ',
+                        style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14),),
+                      Text('${resultTRetrait} FCFA',
+                        style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14),),
+                    ],
+                  )),
 
 
               Container(
@@ -54,7 +68,7 @@ class _CalculOrangeState extends State<CalculOrange> {
                 margin: EdgeInsets.only(top: 20),
                 child: TextField(
                   controller: _controllerTarif,
-                  style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),
+                  style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),
                   keyboardType: TextInputType.number,
                   onChanged: (value){
                     setState(() {
@@ -76,7 +90,7 @@ class _CalculOrangeState extends State<CalculOrange> {
                   // keyboardType: TextInputType.number,
                   decoration: InputDecoration(
                       label: Text('Entrer le montant'),
-                      labelStyle: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),
+                      labelStyle: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),
                       border: OutlineInputBorder(),
                       prefixIcon: Icon(Icons.attach_money,color: Colors.teal,)
                   ),

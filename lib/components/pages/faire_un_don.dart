@@ -37,7 +37,7 @@ class _PageDonState extends State<PageDon> {
               width: 290,
               margin: EdgeInsets.all(20),
                 child: Text(remerciement,
-                  style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,
                   )),
 
@@ -74,7 +74,7 @@ class _PageDonState extends State<PageDon> {
               Text('Paiement par : $mode money\n',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
               Text("Le nom qui doit s'afficher :\n SANGON ALBELDA BRANDON",
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
+                  style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold)),
               SizedBox(height: 20,),
               mode=='orange'?
               Container(
@@ -82,10 +82,11 @@ class _PageDonState extends State<PageDon> {
                 child: TextField(
                   keyboardType: TextInputType.number,
                   controller: _controllerMontant,
-                  style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),
                   decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       label: Text("Montant à donner"),
+                      labelStyle: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),
                       prefixIcon: Icon(Icons.monetization_on_outlined)
                   ),
                 ),
@@ -121,6 +122,10 @@ class _PageDonState extends State<PageDon> {
                       }, icon: Icon(Icons.copy,color: Colors.teal,))
                     ],
                   )),
+              SizedBox(height: 8,),
+              mode !='orange'?
+              Text("Copiez le numéro et composez le code",style: TextStyle(fontWeight: FontWeight.bold),)
+                  :Container(),
 
               SizedBox(height: 30,),
 

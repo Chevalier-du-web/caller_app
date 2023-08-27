@@ -14,7 +14,7 @@ class Page1 extends StatelessWidget {
       children: [
 
         Container(
-          margin: EdgeInsets.only(top: _h/8),
+          margin: EdgeInsets.only(top: _h/5),
           height: 240,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(90),
@@ -30,8 +30,8 @@ class Page1 extends StatelessWidget {
         Container(
           margin: EdgeInsets.only(top:_h/30,left: _w/9,right: _w/9),
           child: Text('   Votre application d\'activation ,'
-              'de consultation de vos forfaits ,'
-              ' soldes et de paiement des factures',style: TextStyle(fontSize: 16)),
+              'de consultation de vos forfaits \n'
+              ' soldes et de paiement des factures',style: TextStyle(fontSize: 20),textAlign: TextAlign.center,),
         )
       ],
     );

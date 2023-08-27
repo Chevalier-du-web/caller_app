@@ -132,16 +132,15 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                       AnimatedTextKit(
                         repeatForever: true,
                         animatedTexts: [
-                          TyperAnimatedText("Faites un don ... ",
+                          TyperAnimatedText("Cliquez ici pour faire un don",
                               speed: Duration(milliseconds: 150),
-                              textStyle: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color:Colors.white)),
+                              textStyle: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color:Colors.white)),
                           TyperAnimatedText("Pour nous soutenir ",
                               speed: Duration(milliseconds: 150),
-                              textStyle: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color:Colors.white)),
+                              textStyle: TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color:Colors.white)),
                           TyperAnimatedText("Et nous encourager ",
                               speed: Duration(milliseconds: 150),
-                              textStyle: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color:Colors.white))
-
+                              textStyle: TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color:Colors.white))
 
                         ],
                       ),

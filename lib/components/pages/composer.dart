@@ -22,14 +22,17 @@ class _ComposerState extends State<Composer> {
           children: [
             SizedBox(height: _h/12,),
             Container(
+              width: 250,
                 padding: EdgeInsets.all(17),
                 decoration: BoxDecoration(
                     color: Colors.transparent,
                     border: Border.all(color: Colors.grey),
                   borderRadius: BorderRadius.circular(10)
                 ),
-                child: Text('Entrez votre code ',
-                  style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),)),
+                child: Center(
+                  child: Text('Entrez votre code ',
+                    style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                )),
             SizedBox(height: _h/13,),
             Center(
               child: Container(
@@ -42,13 +45,13 @@ class _ComposerState extends State<Composer> {
                 child: TextField(
                   controller: codeSaisi,
                   keyboardType: TextInputType.phone,
-                  style: TextStyle(fontSize: 20),
+                  style: TextStyle(fontSize: 15),
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     label: Text("Saisissez votre code"),
                     hintText: 'Saisir un code',
                     prefixIcon: Icon(Icons.call,color: Colors.teal,),
-                    hintStyle: TextStyle(fontSize: 16)
+                    hintStyle: TextStyle(fontSize: 15)
                   ),
                 ),
               ),

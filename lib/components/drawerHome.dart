@@ -126,7 +126,7 @@ class _DrawerHomeState extends State<DrawerHome> {
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>RechargePage()));
                   },
-                  icon: Icon(Icons.help,
+                  icon: Icon(Icons.credit_card_rounded,
                     color: Colors.teal,),),
 
                 ListWidget(
@@ -147,7 +147,7 @@ class _DrawerHomeState extends State<DrawerHome> {
 
                 Divider(),
                 ListWidget(
-                  title: 'A propos',
+                  title: 'A propos & aides',
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>Apropos()));
                   },
@@ -157,7 +157,6 @@ class _DrawerHomeState extends State<DrawerHome> {
                 ListWidget(
                   title: 'Partager aux amis',
                   onPressed: () {
-                    Navigator.pop(context);
                     Share.share('Application Servus disponible sur Playstore... '
                         'merci pour votre aimable'
                         ' compréhension et bonne utilisation ...');                  },

@@ -1,4 +1,3 @@
-import 'package:caller/components/choix_reseau.dart';
 import 'package:caller/components/pages/callbox_page.dart';
 import 'package:caller/components/pages/tarif_mtn.dart';
 import 'package:caller/components/pages/tarif_orange.dart';

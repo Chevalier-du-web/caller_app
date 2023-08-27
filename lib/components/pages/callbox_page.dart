@@ -54,13 +54,13 @@ class _CallBoxPageState extends State<CallBoxPage> {
                   child: TextField(
                     controller: phoneSaisi,
                     keyboardType: TextInputType.phone,
-                    style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),
                     decoration: InputDecoration(
                       label: Text("Téléphone"),
                         hintText: 'Saisir le numéro',
                         border: OutlineInputBorder(),
                         prefixIcon: Icon(Icons.call),
-                        hintStyle: TextStyle(fontSize: 16)
+                        hintStyle: TextStyle(fontSize: 15)
                     ),
                   ),
                 ),
@@ -77,12 +77,12 @@ class _CallBoxPageState extends State<CallBoxPage> {
                   child: TextField(
                     controller: montantSaisi,
                     keyboardType: TextInputType.number,
-                    style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),
                     decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         label: Text('Montant'),
                         prefixIcon: Icon(Icons.monetization_on_outlined),
-                        hintStyle: TextStyle(fontSize: 16)
+                        hintStyle: TextStyle(fontSize: 15)
                     ),
                   ),
                 ),

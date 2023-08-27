@@ -52,8 +52,10 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
 
                         paintStyle:  PaintingStyle.stroke,
                         strokeWidth:  0.9,
+                        dotWidth: 25,
+                        dotHeight: 6,
                         dotColor:  Colors.grey,
-                        activeDotColor:  Colors.blue
+                        activeDotColor:  Colors.teal
                     ),),
 
                   //bouton next

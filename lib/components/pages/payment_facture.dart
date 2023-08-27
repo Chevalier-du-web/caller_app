@@ -50,14 +50,17 @@ class _PaymentFactureState extends State<PaymentFacture> {
             children: [
               SizedBox(height: 40,),
               Container(
+                width: 250,
                   padding: EdgeInsets.all(17),
                   decoration: BoxDecoration(
                       color: Colors.transparent,
                       border: Border.all(color: Colors.grey),
                     borderRadius: BorderRadius.circular(10)
                   ),
-                  child: Text('Choix de la facture',
-                    style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),)),
+                  child: Center(
+                    child: Text('Choix de la facture',
+                      style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                  )),
               SizedBox(height: 40,),
               CustomCard(onpressed: ()=>ChoixReseaux('eneo'), image: 'assets/eneo.jpg', title: 'ENEO prépayé', type: 0,),
 

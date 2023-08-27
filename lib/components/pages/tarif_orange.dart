@@ -48,7 +48,7 @@ class TarifsOrange extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: Colors.transparent,
                   image: DecorationImage(
-                    image: AssetImage('assets/orange-tarif.PNG'),
+                    image: AssetImage('assets/orange-tarif.png'),
                     //fit: BoxFit.cover
                   )
                 ),

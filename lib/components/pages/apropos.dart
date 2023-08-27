@@ -21,6 +21,7 @@ class Apropos extends StatelessWidget {
     return Scaffold(
 
       body:CustomScrollView(
+        physics: AlwaysScrollableScrollPhysics(parent: BouncingScrollPhysics()),
         slivers: [
           SliverAppBar(
             pinned: true,
@@ -57,11 +58,43 @@ class Apropos extends StatelessWidget {
                   color: Colors.grey.withOpacity(.2),
                     borderRadius: BorderRadius.circular(10)),
                 child: Text('Développeur : Sangon Brangon\n '
-                    'Etudiant en 3e année génie logiciel',
+                    'Etudiant en informatique',
                   style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),textAlign: TextAlign.center,),
               ),
               SizedBox(height: 10,),
               Divider(),
+              Center(child: Text("Comment ca marche ?",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),)),
+              Container(
+                margin: EdgeInsets.only(left: 20,right: 20,top: 10,bottom: 20),
+                padding: EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: Colors.transparent,
+                  border: Border.all(),
+                  borderRadius: BorderRadius.circular(10)
+                ),
+                child: Row(
+                  children: [
+                    Container(
+                      width:60,
+                      height: 60,
+                      margin: EdgeInsets.only(right: 15),
+                      decoration: BoxDecoration(
+                        color: Colors.teal.withOpacity(.3),
+                        borderRadius: BorderRadius.circular(10)
+                      ),
+                      child: Icon(Icons.help),
+                    ),
+                    Container(
+                      width: 220,
+                      child: Text("        Il suffit de sélectionner le service souhaité, lancer l'appel "
+                          "et choisir la sim en fonction des réseaux "
+                          "disponibles dans votre téléphone. Simplifiez vous la vie avec Servus.",
+                        style: TextStyle(fontWeight: FontWeight.bold),),
+                    ),
+                  ],
+                ),
+              ),
+                  Divider(),
               Container(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -106,7 +139,7 @@ class Apropos extends StatelessWidget {
                         ),
                         child: Row(
                           children: [
-                            Icon(Icons.android),
+                            Icon(Icons.add_shopping_cart_rounded),
                             Text('   Création de sites web '),
                           ],
                         )),
@@ -121,8 +154,8 @@ class Apropos extends StatelessWidget {
                         ),
                         child: Row(
                           children: [
-                            Icon(Icons.android),
-                            Text('   Création des logos et flyers '),
+                            Icon(Icons.mobile_friendly_outlined),
+                            Text('   Création des logos, flyers et autres '),
                           ],
                         )),
                   ],
@@ -141,6 +174,7 @@ class Apropos extends StatelessWidget {
                     title: "Me contacter",
                     buttonType: ButtonType.whatsapp,
                   ),
+                  SizedBox(height: 20,)
             ]),
           )
 
