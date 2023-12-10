@@ -51,7 +51,7 @@ class _PasswordGeneratorState extends State<PasswordGenerator> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Password Generator'),
+        title: Text('Generateur de mot de passe'),
       ),
       body: SingleChildScrollView(
         child: Padding(
