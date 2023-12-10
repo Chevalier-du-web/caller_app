@@ -14,8 +14,8 @@ class Page1 extends StatelessWidget {
       children: [
 
         Container(
-          margin: EdgeInsets.only(top: _h/5),
-          height: 240,
+          margin: EdgeInsets.only(top: _h/6),
+          height: 200,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(90),
             image: DecorationImage(
@@ -26,12 +26,13 @@ class Page1 extends StatelessWidget {
         Container(
       margin: EdgeInsets.only(left:_h/19,right: _h/19,top: _h/25,),
       child: Text('Bienvenue sur Servus.',
-        style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)),
+        style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.white),)),
         Container(
           margin: EdgeInsets.only(top:_h/30,left: _w/9,right: _w/9),
           child: Text('   Votre application d\'activation ,'
               'de consultation de vos forfaits \n'
-              ' soldes et de paiement des factures',style: TextStyle(fontSize: 20),textAlign: TextAlign.center,),
+              ' soldes et de paiement des factures \n totalement gratuit et 100% sécurisé !',
+              style: TextStyle(fontSize: 16,color: Colors.white),textAlign: TextAlign.center),
         )
       ],
     );

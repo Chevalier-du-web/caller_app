@@ -755,10 +755,11 @@ class _HeaderProfilState extends State<HeaderProfil> {
 // composant de l'accueil pour les personnalites de domaine ...
 
 class PersonalityWidget extends StatefulWidget {
-  const PersonalityWidget({Key? key, required this.title, required this.description, required this.image}) : super(key: key);
+  const PersonalityWidget({Key? key, required this.title, required this.description, required this.image, required this.onPress}) : super(key: key);
   final String title;
   final String description;
   final String image;
+  final VoidCallback onPress;
 
   @override
   State<PersonalityWidget> createState() => _PersonalityWidgetState();
@@ -767,54 +768,59 @@ class PersonalityWidget extends StatefulWidget {
 class _PersonalityWidgetState extends State<PersonalityWidget> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(left: 10,right: 10,bottom: 10),
-      decoration: BoxDecoration(
-        color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.5),
-              spreadRadius: 3,
-              blurRadius: 7,
-              offset: Offset(0, 3), // changes position of shadow
+    return InkWell(
+      onTap: widget.onPress,
+      child: Container(
+        margin: EdgeInsets.only(left: 10,right: 10,bottom: 10),
+        decoration: BoxDecoration(
+          color: Colors.transparent,
+            // boxShadow: [
+            //   BoxShadow(
+            //     color: Colors.grey.withOpacity(0.5),
+            //     spreadRadius: 3,
+            //     blurRadius: 7,
+            //     offset: Offset(0, 3), // changes position of shadow
+            //   )
+            // ],
+            border: Border.all(color: Colors.grey),
+          borderRadius: BorderRadius.circular(8)
+        ),
+        child: Row(
+          children: [
+            Container(
+              height: 50,
+              width: 50,
+              margin: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(20),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 3,
+                      blurRadius: 7,
+                      offset: Offset(0, 3), // changes position of shadow
+                    )
+                  ],
+                image: DecorationImage(
+                  image: AssetImage(widget.image)
+                )
+              ),
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(widget.title,style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+                Container(
+                  width: 240,
+                  margin: EdgeInsets.only(top: 3),
+                  child: Text(widget.description,
+                      style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400)),
+                )
+              ],
             )
           ],
-        borderRadius: BorderRadius.circular(8)
-      ),
-      child: Row(
-        children: [
-          Container(
-            height: 50,
-            width: 50,
-            margin: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 3,
-                    blurRadius: 7,
-                    offset: Offset(0, 3), // changes position of shadow
-                  )
-                ],
-              image: DecorationImage(
-                image: AssetImage(widget.image)
-              )
-            ),
-          ),
-          Column(
-            children: [
-              Text(widget.title,style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
-              Container(
-                width: 240,
-                margin: EdgeInsets.only(top: 3),
-                child: Text(widget.description,
-                    style: TextStyle(fontSize: 16,fontWeight: FontWeight.w400)),
-              )
-            ],
-          )
-        ],
+        ),
       ),
     );
   }

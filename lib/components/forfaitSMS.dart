@@ -127,10 +127,10 @@ class _ForfaitSMSState extends State<ForfaitSMS> {
                     itemBuilder: (context,index){
                       return Container(
                         decoration: BoxDecoration(
-                            color: current==index? Colors.teal.withOpacity(.3) : Colors.grey.withOpacity(.3),
-                            borderRadius: BorderRadius.circular(90)
+                            color: current==index? Colors.teal.withOpacity(.6) : Colors.grey.withOpacity(.3),
+                            borderRadius: BorderRadius.circular(10)
                         ),
-                        margin: EdgeInsets.all(2),
+                        margin: EdgeInsets.all(4),
                         child: GestureDetector(
                           onTap: (){
                             setState(() {
@@ -138,6 +138,7 @@ class _ForfaitSMSState extends State<ForfaitSMS> {
                                   :index==1?ForfaitsSMS = mtn
                                   :index ==2 ? ForfaitsSMS = camtel
                                   :ForfaitsSMS = nexttel;
+                              current = index;
                             });
                           },
                           child: Container(
@@ -146,7 +147,7 @@ class _ForfaitSMSState extends State<ForfaitSMS> {
                             width: 60,
                             decoration: BoxDecoration(
                               color: Colors.red,
-                                borderRadius: BorderRadius.circular(90),
+                                borderRadius: BorderRadius.circular(30),
                                 image: DecorationImage(
                                     image: AssetImage(imagesReseaux[index],),fit: BoxFit.cover
                                 )

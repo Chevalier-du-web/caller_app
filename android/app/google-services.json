@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "782948295942",
+    "project_id": "servus-app-eac37",
+    "storage_bucket": "servus-app-eac37.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:782948295942:android:6643d020c42f65a1c86a87",
+        "android_client_info": {
+          "package_name": "com.example.caller"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjESUVV_oz2WsjNwof2j3GVSZ-U2z8ziI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

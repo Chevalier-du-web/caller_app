@@ -127,7 +127,8 @@ class _DrawerHomeState extends State<DrawerHome> {
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>RechargePage()));
                   },
                   icon: Icon(Icons.credit_card_rounded,
-                    color: Colors.teal,),),
+                    color: Colors.teal,),
+                ),
 
                 ListWidget(
                   title: 'Composer un code',

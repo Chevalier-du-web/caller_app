@@ -1,3 +1,4 @@
+import 'package:caller/components/button.dart';
 import 'package:flutter/material.dart';
 
 import '../components/transition.dart';
@@ -29,24 +30,18 @@ class Page3 extends StatelessWidget {
         Container(
             margin: EdgeInsets.only(left:_h/19,right: _h/19,top: _h/25,),
             child: Text('   Consultez les meilleurs forfaits',textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)),
+              style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.white),)),
         Container(
           margin: EdgeInsets.only(top:_h/30,left: _w/8,right: _w/8),
-          child: Text('    Que ce soit vos forfaits d\'apppel, d\'internet ou de SMS'
-              ' sur tous vos réseaux .',style: TextStyle(fontSize: 20),textAlign: TextAlign.center,),
+          child: Text('    Que ce soit vos forfaits d\'appel, d\'internet ou de SMS'
+              ' sur tous vos réseaux en toute sécurité.',style: TextStyle(fontSize: 16,color: Colors.white),textAlign: TextAlign.center,),
         ),
 
-        GestureDetector(
-          onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>MyCustomSplashScreen())),
-          child: Container(
-            margin: EdgeInsets.only(top: _h/8),
-            padding: EdgeInsets.only(left: 60,right: 60,top: 15,bottom: 15),
-            decoration: BoxDecoration(
-              color: Colors.teal,
-              borderRadius: BorderRadius.circular(20)
-            ),
-            child: Text('Commencer',style: TextStyle(fontSize: 17,color: Colors.white,fontWeight: FontWeight.bold),),
-          ),
+        Container(
+          margin: EdgeInsets.only(top: _h/15,bottom: 10),
+          child: CustomButton(
+              onpressed: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>MyCustomSplashScreen())),
+              title: "Commencer")
         )
       ],
     );

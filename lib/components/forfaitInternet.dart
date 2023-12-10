@@ -139,6 +139,12 @@ class _ForfaitInternetState extends State<ForfaitInternet> {
     },
     {
       'photo':'assets/MTN-Logo.png',
+      'forfait':'MTN Yamo',
+      'quantite':'Forfait Yamo',
+      'code':'*220*1'
+    },
+    {
+      'photo':'assets/MTN-Logo.png',
       'forfait':'Mtn Home',
       'quantite':'Forfait variable',
       'code':'*157*8#'
@@ -154,6 +160,12 @@ class _ForfaitInternetState extends State<ForfaitInternet> {
       'forfait':'Mtn Promo',
       'quantite':'Forfait Découverte',
       'code':'*157*7#'
+    },
+    {
+      'photo':'assets/MTN-Logo.png',
+      'forfait':'Emprunter du credit',
+      'quantite':'Emprunt',
+      'code':'*121#'
     },
 
 
@@ -399,11 +411,13 @@ class _ForfaitInternetState extends State<ForfaitInternet> {
                 itemCount: imagesReseaux.length,
                   itemBuilder: (context,index){
                 return Container(
+
                   decoration: BoxDecoration(
-                    color: current==index? Colors.teal.withOpacity(.3) : Colors.grey.withOpacity(.3),
-                    borderRadius: BorderRadius.circular(90)
+                    color: current==index? Colors.teal.withOpacity(.6) : Colors.grey.withOpacity(.3),
+                    borderRadius: BorderRadius.circular(10),
+
                   ),
-                  margin: EdgeInsets.all(2),
+                  margin: EdgeInsets.all(4),
                   child: GestureDetector(
                     onTap: (){
                       setState(() {
@@ -419,7 +433,7 @@ class _ForfaitInternetState extends State<ForfaitInternet> {
                       height: 50,
                       width: 60,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(150),
+                        borderRadius: BorderRadius.circular(20),
                         image: DecorationImage(
                           image: AssetImage(imagesReseaux[index]),fit: BoxFit.cover
                         )

@@ -20,51 +20,57 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
     bool onLastPage = false;
 
     return Scaffold(
-      body:Stack(
-        children:[
-          PageView(
-            controller: _controller,
-              onPageChanged: (index){
-              print(index);
-                setState(() {
-                  onLastPage=(index==2);
-                });
-                print(onLastPage);
-              },
-            children:[
-              Page1(),
-              Page2(),
-              Page3()
-            ]
-          ),
-          Container(
-              alignment: Alignment(0,0.9),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      body:Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Colors.lightBlueAccent,Colors.indigo]
+          )
+        ),
+        child: Stack(
+          children:[
+            PageView(
+              controller: _controller,
+                onPageChanged: (index){
+                print(index);
+                  setState(() {
+                    onLastPage=(index==2);
+                  });
+                  print(onLastPage);
+                },
+              children:[
+                Page1(),
+                Page2(),
+                Page3()
+              ]
+            ),
+            Container(
+                alignment: Alignment(0,0.9),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 
-                children: [
-                  // bouton skip
+                  children: [
+                    // bouton skip
 
-                  SmoothPageIndicator(controller: _controller,count: 3,
-                    effect: SlideEffect(
-                        spacing:  8.0,
-                        radius:  9.0,
+                    SmoothPageIndicator(controller: _controller,count: 3,
+                      effect: SlideEffect(
+                          spacing:  8.0,
+                          radius:  9.0,
+                          paintStyle:  PaintingStyle.stroke,
+                          strokeWidth:  0.7,
+                          dotWidth: 25,
+                          dotHeight: 6,
+                          dotColor:  Colors.white,
+                          activeDotColor:  Colors.white
+                      ),),
 
-                        paintStyle:  PaintingStyle.stroke,
-                        strokeWidth:  0.9,
-                        dotWidth: 25,
-                        dotHeight: 6,
-                        dotColor:  Colors.grey,
-                        activeDotColor:  Colors.teal
-                    ),),
-
-                  //bouton next
-
+                    //bouton next
 
 
-                ],
-              ))
-        ]
+
+                  ],
+                ))
+          ]
+        ),
       )
     );
   }

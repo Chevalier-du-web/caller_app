@@ -25,9 +25,10 @@ class _RetraitPageState extends State<RetraitPage> {
       child: Column(
         children: [
 
-         HeaderTitle(),
+         // HeaderTitle()
 
-          SizedBox(height: 10,),
+          SizedBox(height: MediaQuery.of(context).size.height/18,),
+
           CustomButton(onpressed: ()=>ChoixReseaux('retrait'), title: 'Retrait d\'argent',),
           SizedBox(height: 10,),
           CustomButton(onpressed: ()=>ChoixReseaux('transfert'), title: 'Transfert d\'argent',),
@@ -54,7 +55,7 @@ class _RetraitPageState extends State<RetraitPage> {
         showDragHandle: true,
         builder: (BuildContext context){
       return Container(
-        height: type=='callbox'?MediaQuery.of(context).size.height-280:220,
+        height: type=='callbox'?MediaQuery.of(context).size.height-240:220,
         decoration: BoxDecoration(
           color: Colors.transparent,
           borderRadius: BorderRadius.only(topRight: Radius.circular(40))
@@ -68,12 +69,57 @@ class _RetraitPageState extends State<RetraitPage> {
               onTap: (){
                 Navigator.pop(context);
                 type =='retrait'?
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>RetraitArgent(type: 1,)))
+                Navigator.push(
+                  context,
+                  PageRouteBuilder(
+                    pageBuilder: (context, animation, secondaryAnimation) => RetraitArgent(type: 1,),
+                    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                      return FadeTransition(
+                        opacity: animation,
+                        child: child,
+                      );
+                    },
+                  ),
+                )
                     : type =='transfert'?
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>TransfertArgent(type: 1,)))
+                Navigator.push(
+                  context,
+                  PageRouteBuilder(
+                    pageBuilder: (context, animation, secondaryAnimation) => TransfertArgent(type: 1,),
+                    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                      return FadeTransition(
+                        opacity: animation,
+                        child: child,
+                      );
+                    },
+                  ),
+                )
                 : type =='callbox'?
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>CallBoxPage(type: 0)))
-                    :Navigator.push(context, MaterialPageRoute(builder: (context)=>TarifsOrange()));
+                Navigator.push(
+                  context,
+                  PageRouteBuilder(
+                    pageBuilder: (context, animation, secondaryAnimation) => CallBoxPage(type: 0,),
+                    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                      return FadeTransition(
+                        opacity: animation,
+                        child: child,
+                      );
+                    },
+                  ),
+                )
+                    :
+                Navigator.push(
+                  context,
+                  PageRouteBuilder(
+                    pageBuilder: (context, animation, secondaryAnimation) => TarifsOrange(),
+                    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                      return FadeTransition(
+                        opacity: animation,
+                        child: child,
+                      );
+                    },
+                  ),
+                );
 
               },
               child: Container(

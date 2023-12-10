@@ -25,14 +25,14 @@ class Page2 extends StatelessWidget {
         Container(
             margin: EdgeInsets.only(left:_h/19,right: _h/19,top: _h/25,),
             child: Text('Facilitez vous la vie',
-              style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+              style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.white),),
         ),
         Container(
           margin: EdgeInsets.only(top:_h/30,left: _w/8,right: _w/8),
           child: Text('    Fini la saisie des longs codes .'
               'En un clic, activez vos forfaits et payez vos factures sur place.'
               'Envoyez de l\'argent et faites vos recharges plus rapidement.',
-              style: TextStyle(fontSize: 20),textAlign: TextAlign.center,),
+              style: TextStyle(fontSize: 16,color: Colors.white),textAlign: TextAlign.center,),
         )
       ],
     );

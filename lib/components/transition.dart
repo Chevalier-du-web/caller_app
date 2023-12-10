@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+import '../authentication/auth_main.dart';
 import '../homepage.dart';
 
 class MyCustomSplashScreen extends StatefulWidget {
@@ -51,7 +52,7 @@ class _MyCustomSplashScreenState extends State<MyCustomSplashScreen>
 
     Timer(Duration(seconds: 4), () {
       setState(() {
-        Navigator.pushReplacement(context, PageTransition(HomePage()));
+        Navigator.pushReplacement(context, PageTransition(AuthenticationPage()));
       });
     });
   }

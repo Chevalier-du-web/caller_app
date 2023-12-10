@@ -1,5 +1,6 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'dart:io';
@@ -11,6 +12,8 @@ import 'components/forfaitInternet.dart';
 import 'components/forfaitSMS.dart';
 import 'components/pages/faire_un_don.dart';
 import 'components/retraitpage.dart';
+import 'gadgets/gadgets.dart';
+import 'history/history_page.dart';
 import 'onboarding_malia/onboarding_malia.dart';
 
 
@@ -67,22 +70,10 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: index==1?
+      appBar: index==3 || index==1 ||index==2?
       null
           :AppBar(
-        leading: Container(
-          width: 35,
-          height: 35,
-          margin: EdgeInsets.all(4),
-          decoration: BoxDecoration(
-            color: Colors.transparent,
-            borderRadius: BorderRadius.circular(50),
-            image: DecorationImage(
-              image: AssetImage("assets/calling.gif"),
-              fit: BoxFit.cover
-            )
-          ),
-        ),
+
         title:  Text('Bienvenue chez Servus'),
         //backgroundColor: darkMode?Colors.deepPurple:Colors.blue,
         actions: [
@@ -98,6 +89,11 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
             }
           },
               icon: modeDark?iconDark:iconLight),
+          InkWell(
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>UsersPage()));
+            },
+              child: Icon(Icons.history))
         ],
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(120.0),child: Column(
@@ -106,11 +102,12 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
               //PageDon- OnboardingMalia
               onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>PageDon())),
               child: Container(
-                width: 270,
+                width: 280,
                 padding: EdgeInsets.only(left: 20,right: 20,top: 8,bottom: 8),
                 decoration: BoxDecoration(
                   color: Colors.indigo,
-                  borderRadius: BorderRadius.circular(50)
+                  borderRadius: BorderRadius.circular(20),
+
                 ),
                 child: Center(
                   child: Row(
@@ -123,18 +120,20 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                           decoration: BoxDecoration(
                             color: Colors.white.withOpacity(.2),
                             borderRadius: BorderRadius.circular(50),
-                            image: DecorationImage(
+                              border: Border.all(color: Colors.deepOrange),
+                              image: DecorationImage(
                               image: AssetImage("assets/don.gif"),
 
                             )
-                          ),),
+                          ),
+                      ),
 
                       AnimatedTextKit(
                         repeatForever: true,
                         animatedTexts: [
                           TyperAnimatedText("Cliquez ici pour faire un don",
                               speed: Duration(milliseconds: 150),
-                              textStyle: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color:Colors.white)),
+                              textStyle: TextStyle(fontSize: 14,fontWeight: FontWeight.bold,color:Colors.white)),
                           TyperAnimatedText("Pour nous soutenir ",
                               speed: Duration(milliseconds: 150),
                               textStyle: TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color:Colors.white)),
@@ -163,11 +162,11 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
         ),
         ),
       ),
-      drawer: index==0?Drawer(
-        width: 270,
-        elevation: 9,
-        child: DrawerHome(),
-      ):null,
+      // drawer: index==0?Drawer(
+      //   width: 270,
+      //   elevation: 9,
+      //   child: DrawerHome(),
+      // ):null,
       body: index==0?TabBarView(
         controller: _controller,
         children: [
@@ -176,7 +175,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           ForfaitAppel(),
           ForfaitSMS()
         ],
-      ):DrawerHome(),
+      ):index==1?GadgetPage():index==2?HistoryPage():DrawerHome(),
       bottomNavigationBar: NavigationBarTheme(
         data: NavigationBarThemeData(
             indicatorColor: Colors.white,
@@ -193,16 +192,67 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           });
         },
         destinations: [
-          NavigationDestination(icon: Icon(Icons.home,
+          NavigationDestination(
+            icon: Icon(Icons.home,
             color: index==0?Colors.black:Colors.white,), label: 'Accueil',),
-          // NavigationDestination(icon: Icon(Icons.call_end_outlined,
-          //   color: index==1?Colors.black:Colors.white,), label: 'Call Box',),
-          NavigationDestination(icon: Icon(Icons.menu_rounded,
-            color: index==1?Colors.black:Colors.white,), label: 'Options'),
+
+          NavigationDestination(
+            icon: Icon(Icons.add_box_outlined,
+              color: index==1?Colors.black:Colors.white,), label: 'Outils',),
+          NavigationDestination(
+            icon: Icon(Icons.history,
+              color: index==2?Colors.black:Colors.white,), label: 'Historique',),
+          NavigationDestination(icon: Icon(
+            Icons.menu_rounded,
+            color: index==3?Colors.black:Colors.white,),
+              label: 'Options'),
 
         ],
       ),),
 
+    );
+  }
+}
+
+
+class UsersPage extends StatelessWidget {
+  final FirebaseFirestore firestore = FirebaseFirestore.instance;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Liste des utilisateurs'),
+      ),
+      body: StreamBuilder<QuerySnapshot>(
+        stream: firestore.collection('users').snapshots(),
+        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+          if (snapshot.hasError) {
+            return Text('Une erreur est survenue : ${snapshot.error}');
+          }
+
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return CircularProgressIndicator();
+          }
+
+          if (snapshot.data!.docs.isEmpty) {
+            return Center(
+              child: Text('La liste est vide.'),
+            );
+          }
+
+          return ListView(
+            children: snapshot.data!.docs.map((DocumentSnapshot document) {
+              Map<String, dynamic> data = document.data() as Map<String, dynamic>;
+
+              return ListTile(
+                title: Text(data['name']),
+                subtitle: Text(data['email']),
+              );
+            }).toList(),
+          );
+        },
+      ),
     );
   }
 }

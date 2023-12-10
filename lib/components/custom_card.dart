@@ -18,19 +18,19 @@ class _CustomCardState extends State<CustomCard> {
     return InkWell(
       onTap:widget.onpressed,
       child: Container(
-        width: 230,
+        width: 280,
         padding: EdgeInsets.all(10),
         decoration: BoxDecoration(
-            color: Colors.white,
+            color: Colors.transparent,
             borderRadius: BorderRadius.circular(10),
-            boxShadow: [
-              BoxShadow(
-                  color: Colors.blueGrey.withOpacity(.4),
-                  offset: Offset(0,3),
-                  blurRadius: 3,
-                  spreadRadius: 1
-              ),
-            ],
+            // boxShadow: [
+            //   BoxShadow(
+            //       color: Colors.blueGrey.withOpacity(.4),
+            //       offset: Offset(0,3),
+            //       blurRadius: 3,
+            //       spreadRadius: 1
+            //   ),
+            // ],
             border: Border.all(color: Colors.grey)
         ),
         child:Row(

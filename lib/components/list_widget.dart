@@ -38,11 +38,13 @@ class _ListWidgetState extends State<ListWidget> {
                     ),
                     child: widget.icon),
                 SizedBox(width: 20,),
-                Text(widget.title,style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+                Text(widget.title,style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
               ],
             ),
 
-            Icon(Icons.arrow_forward_ios_outlined)
+            Container(
+              margin: EdgeInsets.only(right: 10),
+                child: Icon(Icons.arrow_forward_ios_outlined,color: Colors.teal,))
           ],
         ),
       ),

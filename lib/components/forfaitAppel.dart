@@ -90,7 +90,7 @@ class _ForfaitAppelState extends State<ForfaitAppel> {
     {
       'photo':'assets/MTN-Logo.png',
       'forfait':'Mtn Appel Plan',
-      'quantite':'Forfait Tous réseaux et internet',
+      'quantite':'Tous réseaux + internet',
       'code':'*123*3*1*1*3#'
     },
     {
@@ -128,6 +128,12 @@ class _ForfaitAppelState extends State<ForfaitAppel> {
       'forfait':'Mtn Roaming',
       'quantite':'Forfait Roaming',
       'code':'*123*3*1*5#'
+    },
+    {
+      'photo':'assets/MTN-Logo.png',
+      'forfait':'MTN Bon plan',
+      'quantite':'Meilleures offres',
+      'code':'*222#'
     },
 
   ];
@@ -179,7 +185,7 @@ class _ForfaitAppelState extends State<ForfaitAppel> {
     },
     {
       'photo':'assets/Nexttel-Cameroon-Logo.png',
-      'forfait':'OHHA 500F',
+      'forfait':'HOHA 500F',
       'quantite':'500F Appels Nexttel\n 72H +1.2Go valable 30 jours',
       'code':'*860*3#'
     },
@@ -217,10 +223,10 @@ class _ForfaitAppelState extends State<ForfaitAppel> {
                     itemBuilder: (context,index){
                       return Container(
                         decoration: BoxDecoration(
-                            color: current==index? Colors.teal.withOpacity(.3) : Colors.grey.withOpacity(.3),
-                            borderRadius: BorderRadius.circular(90)
+                            color: current==index? Colors.teal.withOpacity(.6) : Colors.grey.withOpacity(.3),
+                            borderRadius: BorderRadius.circular(10)
                         ),
-                        margin: EdgeInsets.all(2),
+                        margin: EdgeInsets.all(4),
                         child: GestureDetector(
                           onTap: (){
                             setState(() {
@@ -228,6 +234,7 @@ class _ForfaitAppelState extends State<ForfaitAppel> {
                                   :index==1?ForfaitsAppel = mtn
                                   :index ==2 ? ForfaitsAppel = camtel
                                   :ForfaitsAppel = nexttel;
+                              current= index;
                             });
                           },
                           child: Container(
@@ -235,7 +242,7 @@ class _ForfaitAppelState extends State<ForfaitAppel> {
                             height: 60,
                             width: 60,
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(90),
+                              borderRadius: BorderRadius.circular(30),
                                 image: DecorationImage(
                                     image: AssetImage(imagesReseaux[index]),fit: BoxFit.cover
                                 )

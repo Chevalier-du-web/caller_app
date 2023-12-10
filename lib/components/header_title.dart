@@ -10,10 +10,10 @@ class HeaderTitle extends StatelessWidget {
       width: 270,
       height: 70,
       margin: EdgeInsets.only(top: 10),
-      padding: EdgeInsets.all(18),
+      padding: EdgeInsets.all(5),
       decoration: BoxDecoration(
           color: Colors.transparent,
-          border: Border.all(color: Colors.grey,width: 4),
+          border: Border.all(color: Colors.grey,width: 2),
         borderRadius: BorderRadius.circular(20),
 
       ),
@@ -29,10 +29,10 @@ class HeaderTitle extends StatelessWidget {
             FadeAnimatedText('Simplifiez-vous la vie ...',
                 textStyle: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),
                 duration: Duration(seconds: 5)),
-            FadeAnimatedText('Fini les longs codes ... ',
+            FadeAnimatedText('Fini les longs codes ',
                 textStyle: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),
                 duration: Duration(seconds: 5)),
-            FadeAnimatedText('Les transactions deviennent un jeu ...',
+            FadeAnimatedText('Vos transactions sans erreur ',
                 textStyle: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),
                 duration: Duration(seconds: 5))
           ],

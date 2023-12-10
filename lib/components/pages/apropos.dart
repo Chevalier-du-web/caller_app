@@ -48,7 +48,7 @@ class Apropos extends StatelessWidget {
               Text('Version 2.0',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),textAlign: TextAlign.center,),
               Container(
                 margin: EdgeInsets.only(top: 20,left: 40,right: 40),
-                child: Text(apropos,style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                child: Text(apropos,style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
               ),
               SizedBox(height: 9,),
               Container(
@@ -58,8 +58,8 @@ class Apropos extends StatelessWidget {
                   color: Colors.grey.withOpacity(.2),
                     borderRadius: BorderRadius.circular(10)),
                 child: Text('Développeur : Sangon Brangon\n '
-                    'Etudiant en informatique',
-                  style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),textAlign: TextAlign.center,),
+                    'Etudiant  et chercheur \nen informatique',
+                  style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),textAlign: TextAlign.center,),
               ),
               SizedBox(height: 10,),
               Divider(),
@@ -116,7 +116,7 @@ class Apropos extends StatelessWidget {
                       ],
                     ),
                     Container(
-                      width: 270,
+                      width: 290,
                       padding: EdgeInsets.all(13),
                         margin: EdgeInsets.all(4),
                         decoration: BoxDecoration(
@@ -130,7 +130,7 @@ class Apropos extends StatelessWidget {
                           ],
                         )),
                     Container(
-                        width: 270,
+                        width: 290,
                         margin: EdgeInsets.all(4),
                         padding: EdgeInsets.all(13),
                         decoration: BoxDecoration(
@@ -145,7 +145,7 @@ class Apropos extends StatelessWidget {
                         )),
 
                     Container(
-                        width: 270,
+                        width: 290,
                         margin: EdgeInsets.all(4),
                         padding: EdgeInsets.all(13),
                         decoration: BoxDecoration(
