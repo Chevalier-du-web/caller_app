@@ -12,14 +12,14 @@ class ChatProvider with ChangeNotifier {
   int get getChatListLength {
     return _chatList.length;
   }
+  // Méthode pour vider la liste _chatList
+  void clearChatList() {
+    _chatList.clear();
+    notifyListeners();
+  }
 
   void addUserMessage({required String msg}) {
     _chatList.add(ChatModel(msg: msg, chatIndex: 0));
-    notifyListeners();
-  }
-  void NewChat() {
-    _chatList.clear();
-    print(_chatList.length);
     notifyListeners();
   }
 

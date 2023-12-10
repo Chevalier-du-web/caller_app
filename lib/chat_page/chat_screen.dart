@@ -37,6 +37,7 @@ class _ChatScreenState extends State<ChatScreen> {
     _focusNode = FocusNode();
     super.initState();
     getCurrentTheme();
+
   }
 
   @override
@@ -64,8 +65,8 @@ class _ChatScreenState extends State<ChatScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final modelProvider = Provider.of<ModelsProvider>(context, listen: false);
-    final chatProvider = Provider.of<ChatProvider>(context, listen: false);
+    final modelProvider = Provider.of<ModelsProvider>(context, listen: true);
+    final chatProvider = Provider.of<ChatProvider>(context, listen: true);
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.profil),
@@ -76,7 +77,8 @@ class _ChatScreenState extends State<ChatScreen> {
         actions: [
           IconButton(
             onPressed: () async {
-              await Services.showModelSheet(context: context);
+              // await Services.showModelSheet(context: context);
+              print(chatProvider.getChatListLength);
             },
             icon: const Icon(
               Icons.more_vert,

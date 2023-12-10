@@ -1,10 +1,12 @@
 import 'package:caller/gadgets/traductor.dart';
 import 'package:flutter/material.dart';
 import 'package:caller/gadgets/calculator.dart';
+import 'package:provider/provider.dart';
 
 import '../chat_page/chat_screen.dart';
 import '../chat_page/provider/chat_provider.dart';
 import '../onboarding_malia/onboarding_malia.dart';
+import '../password_generator.dart';
 
 
 
@@ -41,6 +43,7 @@ class _GadgetPageState extends State<GadgetPage> {
             PersonalityWidget(title: 'Le savant', description: 'Repond a toutes vos questions ...', image: 'assets/doctor.png',
               onPress: () {
                 //ChatScreen()
+                Provider.of<ChatProvider>(context, listen: false).clearChatList();
                 Navigator.push(
                   context,
                   PageRouteBuilder(
@@ -57,7 +60,7 @@ class _GadgetPageState extends State<GadgetPage> {
             PersonalityWidget(title: 'Docteur love', description: 'Specialiste en Amour et conseils',
               image: 'assets/doctor.png',
               onPress: () {
-                ChatProvider().NewChat();
+                Provider.of<ChatProvider>(context, listen: false).clearChatList();
                 Navigator.push(
                   context,
                   PageRouteBuilder(
@@ -92,7 +95,21 @@ class _GadgetPageState extends State<GadgetPage> {
             ),
             PersonalityWidget(title: 'Generateur de mot de passe',
               description: 'Genere des mots de passes puissants et surs',
-              image: 'assets/doctor.png', onPress: () {  },),
+              image: 'assets/doctor.png', onPress: () {
+
+                Navigator.push(
+                  context,
+                  PageRouteBuilder(
+                    pageBuilder: (context, animation, secondaryAnimation) => PasswordGenerator(),
+                    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                      return FadeTransition(
+                        opacity: animation,
+                        child: child,
+                      );
+                    },
+                  ),
+                );
+              },),
 
             PersonalityWidget(title: 'Calculateur d\'amour',
               description: 'Donne le pourcentage d\'amour entre deux partenaires',

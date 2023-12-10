@@ -95,46 +95,4 @@ class ApiService {
     return utf8.decode(bytes);
   }
   //
-
-
-  static Future<List<ChatModel>>  sendMessage2({required String message, required String modelId}) async {
-    try {
-      final response = await http.post(
-        Uri.parse('$BASE_URL/chat/completions'),
-        headers: {
-          'Authorization': 'Bearer $API_KEY',
-          'Content-Type': 'application/json'
-        },
-        body: jsonEncode(
-          {
-            "model": modelId,
-            "messages": [
-              {"role": "system", "content": "You are a helpful assistant."},
-              {"role": "user", "content": message}
-            ]
-          },
-        ),
-      );
-
-      final Map<String, dynamic> jsonResponse = jsonDecode(response.body);
-      if (jsonResponse['error'] != null) {
-        throw HttpException(jsonResponse['error']['message']);
-      }
-
-      List<ChatModel> chatList = [];
-      if (jsonResponse['choices'].length > 0) {
-        chatList = List.generate(
-          jsonResponse['choices'].length,
-              (index) =>
-              ChatModel(
-                msg: jsonResponse['choices'][index]['message']['content'],
-                chatIndex: index + 1,
-              ),
-        );
-      }
-      return chatList;
-    } catch (error) {
-      print('error--> $error');
-      rethrow;
-    }
-  }}
+}
