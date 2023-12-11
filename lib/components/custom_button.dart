@@ -39,7 +39,7 @@ class _CustomButtonState extends State<CustomButton> {
         padding: const EdgeInsets.all(4.0),
         child: Icon(
           Icons.check,
-          color: Colors.purpleAccent,
+          color: Colors.green,
         ),
       ),
       onPressed: () async {
@@ -62,7 +62,7 @@ class _CustomButtonState extends State<CustomButton> {
           child: Material(
             color: state.maybeWhen(
               success: () => Colors.purple[100],
-              orElse: () => Colors.blue,
+              orElse: () => Colors.teal,
             ),
             // This prevents the loading indicator showing below the
             // button

@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import '../chat_page/chat_screen.dart';
 import '../chat_page/provider/chat_provider.dart';
 import '../imc_calculator.dart';
+import '../love_calculator.dart';
 import '../onboarding_malia/onboarding_malia.dart';
 import '../password_generator.dart';
 
@@ -134,7 +135,20 @@ class _GadgetPageState extends State<GadgetPage> {
 
             PersonalityWidget(title: 'Calculateur d\'amour',
               description: 'Donne le pourcentage d\'amour entre deux partenaires',
-              image: 'assets/doctor.png', onPress: () {  },),
+              image: 'assets/doctor.png', onPress: () {
+                Navigator.push(
+                  context,
+                  PageRouteBuilder(
+                    pageBuilder: (context, animation, secondaryAnimation) => LoveCalculator(),
+                    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                      return FadeTransition(
+                        opacity: animation,
+                        child: child,
+                      );
+                    },
+                  ),
+                );
+              },),
 
 
 
@@ -145,3 +159,5 @@ class _GadgetPageState extends State<GadgetPage> {
     );
   }
 }
+
+//
