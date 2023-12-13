@@ -24,8 +24,11 @@ class LoveCalculatorService {
 
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
-      print(data['percentage']);
-      return data['percentage'];
+      print(data);
+      return {
+        "percentage":data['percentage'],
+        "result":data['result']
+      };
     } else {
       throw Exception('Failed to load love percentage');
     }
@@ -43,6 +46,7 @@ class _LoveCalculatorState extends State<LoveCalculator> {
   TextEditingController name1Controller = TextEditingController();
   TextEditingController name2Controller = TextEditingController();
   String lovePercentage = "0";
+  String loveResult = "En attente";
   LoveCalculatorService loveCalculatorService = LoveCalculatorService();
 
 
@@ -56,7 +60,8 @@ class _LoveCalculatorState extends State<LoveCalculator> {
       print(percentage);
 
       setState(() {
-        lovePercentage = percentage;
+        lovePercentage = percentage['percentage'];
+        loveResult = percentage['result'];
       });
     } catch (e) {
       print('Error: $e');
@@ -76,14 +81,14 @@ class _LoveCalculatorState extends State<LoveCalculator> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              SizedBox(height: MediaQuery.of(context).size.height/18,),
+              SizedBox(height: MediaQuery.of(context).size.height/32,),
               Container(
-                height: 100,
-                width: 100,
+                height: 140,
+                width: 140,
                 margin: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage(AssetsManager.userImage)
+                        image: AssetImage("assets/love.png")
                     )
                 ),
               ),
@@ -104,6 +109,10 @@ class _LoveCalculatorState extends State<LoveCalculator> {
               SizedBox(height: 16),
               Text(
                 'Pourcentage d\'amour : ${lovePercentage} %',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              Text(
+                'Conclusion : ${loveResult} ',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
             ],

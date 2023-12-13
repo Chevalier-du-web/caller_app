@@ -5,8 +5,11 @@ import 'package:provider/provider.dart';
 
 import '../chat_page/chat_screen.dart';
 import '../chat_page/provider/chat_provider.dart';
+import '../code_scan.dart';
 import '../imc_calculator.dart';
 import '../love_calculator.dart';
+import '../document_scan.dart';
+
 import '../onboarding_malia/onboarding_malia.dart';
 import '../password_generator.dart';
 
@@ -59,14 +62,14 @@ class _GadgetPageState extends State<GadgetPage> {
                   ),
                 );
               },),
-            PersonalityWidget(title: 'Docteur love', description: 'Specialiste en Amour et conseils',
+            PersonalityWidget(title: 'Mon medecin', description: 'Specialiste en sante et conseils',
               image: 'assets/doctor.png',
               onPress: () {
                 Provider.of<ChatProvider>(context, listen: false).clearChatList();
                 Navigator.push(
                   context,
                   PageRouteBuilder(
-                    pageBuilder: (context, animation, secondaryAnimation) => ChatScreen(profil: 'DOCTEUR LOVE',),
+                    pageBuilder: (context, animation, secondaryAnimation) => ChatScreen(profil: 'Mon medecin',),
                     transitionsBuilder: (context, animation, secondaryAnimation, child) {
                       return FadeTransition(
                         opacity: animation,
@@ -76,9 +79,9 @@ class _GadgetPageState extends State<GadgetPage> {
                   ),
                 );
               },),
-            PersonalityWidget(title: 'L\'influenceur des reseaux',
-              description: 'Createur de contenus et publications', image: 'assets/doctor.png', onPress: () {  },),
-            PersonalityWidget(title: 'Generateur d\'images', description: 'Genere les images de tres bonne qualite', image: 'assets/doctor.png', onPress: () {  },),
+            // PersonalityWidget(title: 'L\'influenceur des reseaux',
+            //   description: 'Createur de contenus et publications', image: 'assets/doctor.png', onPress: () {  },),
+            // PersonalityWidget(title: 'Generateur d\'images', description: 'Genere les images de tres bonne qualite', image: 'assets/doctor.png', onPress: () {  },),
 
 
             Row(
@@ -140,6 +143,22 @@ class _GadgetPageState extends State<GadgetPage> {
                   context,
                   PageRouteBuilder(
                     pageBuilder: (context, animation, secondaryAnimation) => LoveCalculator(),
+                    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                      return FadeTransition(
+                        opacity: animation,
+                        child: child,
+                      );
+                    },
+                  ),
+                );
+              },),
+            PersonalityWidget(title: 'Scanner un document',
+              description: 'Numerisez vos documents',
+              image: 'assets/doctor.png', onPress: () {
+                Navigator.push(
+                  context,
+                  PageRouteBuilder(
+                    pageBuilder: (context, animation, secondaryAnimation) => DocumentScannerPage(),
                     transitionsBuilder: (context, animation, secondaryAnimation, child) {
                       return FadeTransition(
                         opacity: animation,
